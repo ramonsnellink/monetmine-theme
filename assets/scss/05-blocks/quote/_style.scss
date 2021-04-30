@@ -1,0 +1,74 @@
+.wp-block-quote {
+	&.is-style-quotation-marks {
+		border: none;
+		padding: 0;
+		margin: 0.5em 0;
+
+		& p {
+			font-size: 1.2em;
+			font-weight: 700;
+			line-height: 1.4;
+			margin-bottom: 0.2em;
+			font-style: normal;
+
+			&::before {
+				content: '“';
+			}
+
+			&::after {
+				content: '”';
+			}
+
+			&::before,
+			&::after {
+				font-family: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+			}
+		}
+
+		& cite {
+			font-style: normal;
+			font-size: 0.8em;
+			&::before {
+				content: '- ';
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.wp-block-quote {
+		&.is-style-quotation-marks {
+			& p {
+				font-size: 1.4em;
+				line-height: 1.6;
+			}
+		}
+	}
+}
+
+.add-quote-marks {
+	position: relative;
+	&::before {
+		top: -35px;
+		content: '“';
+	}
+
+	&::after {
+		content: '”';
+		// bottom: 0;
+		bottom: 0px;
+		top: calc(100% - 40px);
+	}
+
+	&::before,
+	&::after {
+		font-family: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+		position: absolute;
+		font-size: 10rem;
+		line-height: 1;
+		margin: 0;
+		padding: 0;
+		left: calc(50% - 1.5rem);
+		color: var(--global--color-background-mid);
+	}
+}

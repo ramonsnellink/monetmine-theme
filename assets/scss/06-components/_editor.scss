@@ -1,0 +1,135 @@
+.block-editor-block-list__layout {
+	font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+		'Segoe UI Symbol', 'Noto Color Emoji' !important;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	& p {
+		font-size: 1.125rem !important;
+		line-height: 1.8em !important;
+		color: var(--main--color-text);
+		font-weight: normal;
+	}
+
+	& .block-editor-block-list__block {
+		& a {
+			text-decoration: underline;
+			color: var(--link--color-text);
+		}
+	}
+
+	& h1,
+	& h2,
+	& h3,
+	& h4,
+	& h5,
+	& h6 {
+		font-weight: var(--font-weight-strong);
+	}
+
+	h1 {
+		font-size: $h1-font-size;
+		line-height: $h1-line-height;
+	}
+
+	h2 {
+		font-size: $h2-font-size;
+		line-height: $h2-line-height;
+	}
+
+	h3 {
+		font-size: $h3-font-size;
+		line-height: $h3-line-height;
+	}
+
+	h4 {
+		font-size: $h4-font-size;
+		line-height: $h4-line-height;
+	}
+
+	h5,
+	h6 {
+		font-size: $h5-6-font-size;
+		line-height: $h5-6-line-height;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.block-editor-block-list__layout,
+	.editor-styles-wrapper {
+		h1 {
+			font-size: $h1-font-size-desktop;
+			line-height: $h1-line-height-desktop;
+		}
+
+		h2 {
+			font-size: $h2-font-size-desktop;
+			line-height: $h2-line-height-desktop;
+		}
+
+		h3 {
+			font-size: $h3-font-size-desktop;
+			line-height: $h3-line-height-desktop;
+		}
+
+		h4 {
+			font-size: $h4-font-size-desktop;
+			line-height: $h4-line-height-desktop;
+		}
+
+		h5,
+		h6 {
+			font-size: $h5-6-font-size-desktop;
+			line-height: $h5-6-line-height-desktop;
+		}
+	}
+}
+
+// Enforce the custom link color even if a custom background color has been set.
+// The extra specificity here is required to override the background color styles.
+.has-background {
+	// Target both current level and nested block.
+	.has-link-color a,
+	&.has-link-color a {
+		color: var(--wp--style--color--link, var(--global--color-primary));
+	}
+}
+
+button,
+a {
+	cursor: pointer;
+}
+
+.full-width-content .editor-styles-wrapper .wp-block,
+.full-width-content .editor-styles-wrapper .editor-post-title__block.wp-block,
+.full-width-content
+	.editor-styles-wrapper
+	.wp-block-group:not(.narrow)
+	.wp-block-group__inner-container {
+	max-width: $grid-width;
+}
+
+.wp-block:not([data-type='core/paragraph']):not(.block-list-appender):not(.block-editor-default-block-appender):not(.editor-post-title):hover::before {
+	content: '';
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	border: 1px dashed;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.wp-block:not([data-type='core/paragraph']):not(.block-list-appender):not(.block-editor-default-block-appender):not(.editor-post-title):hover::after {
+	content: attr(data-title);
+	position: absolute;
+	top: -20px;
+	left: unset;
+	right: 0;
+	padding: 0 8px;
+	font-size: 11px;
+	background: #404040;
+	color: #fff;
+	display: inline-block;
+	height: 20px;
+}

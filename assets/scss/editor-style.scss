@@ -1,0 +1,24 @@
+// @import 'settings/colors';
+// @import 'settings/base';
+
+// .editor-styles-wrapper,
+// .wp-block-heading,
+// .editor-rich-text__tinymce {
+// }
+
+@import '01-settings/base';
+@import '01-settings/colors';
+@import '01-settings/typography';
+@import '02-tools/button-style';
+
+// @import "04-elements/blockquote";
+// @import "04-elements/media";
+// @import "04-elements/forms-editor";
+// @import "04-elements/links";
+
+@import '05-blocks/blocks-editor';
+
+@import '06-components/editor';
+
+@import '07-utilities/color-palette';
+@import '07-utilities/general-utilities';

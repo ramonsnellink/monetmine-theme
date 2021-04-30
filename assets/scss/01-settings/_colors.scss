@@ -1,0 +1,40 @@
+:root {
+	--global--color-yellow: #f6d15e;
+	--global--color-dark-yellow: #eab204;
+	--global--color-dark-gray: #1c1c1b;
+	--global--color-gray: #807f7e;
+	--global--color-light-gray: #f7f6f5;
+	--global--color-lighter-gray: #ebe9e6;
+
+	// Background Colors
+	--global--color-background-body: #fff;
+	--global--color-background-light: var(--global--color-light-gray);
+	--global--color-background-mid: var(--global--color-lighter-gray);
+	--global--color-background-dark: var(--global--color-dark-gray);
+	--global--color-background-highlight: var(--global--color-yellow);
+	--global--color-background-hr: var(--global--color-lighter-gray);
+
+	// Main text
+
+	--main--color-text: var(--global--color-dark-gray);
+	--highlight--color-text: var(--global--color-dark-yellow);
+
+	// Standard button
+	--button--color-background: var(--global--color-lighter-gray);
+	--button--color-background-hover: var(--global--color-yellow);
+
+	--button--color-text: var(--global--color-dark-gray);
+	--button--color-text-hover: var(--global--color-dark-gray);
+
+	// Highlight button
+	--button--hightlight--color-background: var(--global--color-yellow);
+	--button--hightlight--color-background-hover: var(--global--color-dark-yellow);
+
+	--button--hightlight--color-text: var(--global--color-dark-gray);
+	--button--hightlight--color-text-hover: var(--global--color-dark-gray);
+
+	// Links
+
+	--link--color-text: var(--global--color-dark-yellow);
+	--link--color-text-hover: var(--global--color-yellow);
+}

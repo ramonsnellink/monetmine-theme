@@ -1,0 +1,21 @@
+// Colors for editor
+$colors: (
+	'yellow': #f6d15e,
+	'dark-yellow': #eab204,
+	'dark-gray': #1c1c1b,
+	'mid-gray': #807f7e,
+	'light-gray': #f7f6f5,
+	'lighter-gray': #ebe9e6,
+);
+
+@import '../02-tools/map-colors';
+
+@each $name, $color in $colors {
+	.has-#{$name}-color {
+		color: $color;
+	}
+
+	.has-#{$name}-background-color {
+		background-color: $color;
+	}
+}

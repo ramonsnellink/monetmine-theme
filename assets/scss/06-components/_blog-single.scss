@@ -1,0 +1,112 @@
+// Werkt niet, want er zit soms meer dan alleen een IMG in een P...
+
+.single-post {
+	& .site.grid-container {
+		max-width: none;
+	}
+	& .site-content {
+		padding: 0;
+		overflow-x: hidden;
+	}
+
+	& .inside-article {
+		margin: 0 auto;
+
+		& .entry-header {
+			padding: 40px 20px 40px 20px;
+			background-color: var(--global--color-background-light);
+
+			margin: 0 auto;
+
+			& .entry-title {
+				margin: 0 auto;
+				max-width: 690px;
+				margin-bottom: 20px;
+			}
+
+			& .entry-category {
+				max-width: 690px;
+				margin: 0 auto;
+				margin-bottom: 20px;
+
+				&-link {
+					background-color: var(--button--hightlight--color-background);
+					color: var(--button--hightlight--color-text);
+					padding: 0.3rem 0.8rem;
+					font-weight: var(--font-weight-strong);
+					text-transform: uppercase;
+					font-size: 0.8em;
+
+					&:hover {
+						background-color: var(--button--hightlight--color-background-hover);
+						color: var(--button--hightlight--color-text-hover);
+					}
+				}
+			}
+
+			& .post__excerpt {
+				margin: 0 auto;
+				max-width: 690px;
+				padding-top: 10px;
+			}
+		}
+
+		& .entry-content {
+			max-width: 690px;
+			margin: 0 auto;
+			padding: 0px 20px 60px 20px;
+		}
+		& .entry-meta {
+			max-width: 1285px;
+			padding: 20px;
+			margin: 0 auto;
+		}
+
+		& img,
+		iframe {
+			margin-bottom: 0px;
+			max-width: 1285px;
+			width: 100vw;
+			margin-left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+}
+
+@media screen and (min-width: 730px) {
+	.single-post {
+		& .inside-article {
+			// & .entry-header {
+			// 	max-width: 690px;
+			// }
+			& img,
+			iframe {
+				// margin-bottom: 0px;
+				// max-width: 1245px;
+				width: 690px;
+				padding: 0px 20px;
+				// margin-left: 50%;
+				// transform: translateX(-50%);
+			}
+		}
+	}
+}
+@media screen and (min-width: 1024px) {
+	.single-post {
+		& .inside-article {
+			& .entry-header {
+				padding: 60px 20px 80px 20px;
+				max-width: inherit;
+			}
+
+			& img,
+			iframe {
+				// margin-bottom: 0px;
+				// max-width: 1245px;
+				width: 100vw;
+				// margin-left: 50%;
+				// transform: translateX(-50%);
+			}
+		}
+	}
+}

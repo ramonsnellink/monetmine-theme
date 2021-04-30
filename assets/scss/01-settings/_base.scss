@@ -1,0 +1,68 @@
+// Breakpoints
+
+:root {
+	--button--border-radius: 5px;
+
+	--font-weight-normal: 400;
+	--font-weight-strong: 700;
+
+	--button--padding-vertical: 10px;
+	--button--padding-horizontal: calc(2 * var(--button--padding-vertical));
+}
+
+$sm: 640px;
+$md: 768px;
+$lg: 1024px;
+$xl: 1285px;
+$xxl: 1540px;
+
+.max-w-sm {
+	max-width: $sm;
+}
+
+.max-w-md {
+	max-width: $md;
+}
+
+.max-w-lg {
+	max-width: $lg;
+}
+
+.max-w-xl {
+	max-width: $xl;
+}
+
+.full-height .gb-inside-container {
+	height: 100%;
+}
+
+.rounded-sm > img,
+.wp-block-image:not(.is-style-rounded).rounded-sm img {
+	border-radius: 5px;
+}
+
+.rounded-md > img,
+.wp-block-image:not(.is-style-rounded).rounded-md img {
+	border-radius: 10px;
+}
+
+.rounded-lg > img,
+.wp-block-image:not(.is-style-rounded).rounded-lg img {
+	border-radius: 20px;
+}
+
+// Font weights
+
+// Padding & Margin
+
+$padding: 20px;
+$block-margin: 3rem;
+
+// Button styling
+
+// Content
+$content-width: 768px;
+
+// Grid
+$grid: grid;
+$grid-width: $xl;

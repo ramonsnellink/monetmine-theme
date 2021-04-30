@@ -1,0 +1,164 @@
+// /* Site Header
+// ---------------------------------------------------------------------------------------------------- */
+
+.progress-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 2px; /* height of bar */
+	background: white; /* Background color */
+	z-index: 10000; /* increase z-index to bring in front of slider */
+}
+
+.progress-bar {
+	height: 2px;
+	background: var(--global--color-background-highlight); /* Progress bar color */
+	width: 0%;
+}
+
+/* adjust position of progress when admin bar is present */
+.admin-bar .progress-container {
+	top: 33px;
+}
+
+.admin-bar #site-navigation,
+.admin-bar #mobile-header {
+	top: 31px;
+}
+#site-navigation,
+#mobile-header {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 2px; // for progress bar
+	box-shadow: 0 1.8px 5.3px rgba(0, 0, 0, 0.016);
+}
+
+.inside-header {
+	padding: 0px 20px;
+	max-width: $xl;
+}
+
+.site-logo {
+	& img {
+		max-width: 180px;
+		height: auto;
+	}
+}
+
+.main-navigation.toggled .main-nav li {
+	width: inherit;
+	text-align: center;
+}
+
+.main-nav {
+	& .menu {
+		& .menu-item {
+			margin: 0.5em 0.3em;
+
+			& a {
+				color: var(--main--color-text);
+				font-weight: var(--font-weight-strong);
+				font-size: 0.8em;
+				text-transform: lowercase;
+
+				line-height: 1.5;
+				padding: var(--button--padding-vertical) var(--button--padding-horizontal);
+				border-radius: var(--button--border-radius);
+
+				&:hover {
+					background-color: var(--global--color-background-light);
+					color: var(--global--color-dark-yellow);
+				}
+			}
+
+			& .sub-menu {
+				border-radius: 10px;
+				box-shadow: 0 2.1px 3.3px rgba(0, 0, 0, 0.036), 0 3.9px 10px rgba(0, 0, 0, 0.054),
+					0 31px 80px rgba(0, 0, 0, 0.09);
+				padding: 0.5em;
+
+				background-color: white;
+				& .menu-item {
+					margin-left: 0px;
+					&:last-child {
+						margin-bottom: 0em;
+					}
+				}
+			}
+
+			&.current-menu-item {
+				background-color: var(--global--color-background-mid);
+				border-radius: var(--button--border-radius);
+			}
+		}
+	}
+}
+
+.menu-toggle {
+	color: var(--main--color-text);
+
+	& svg {
+		color: var(--main--color-text);
+	}
+
+	&:hover {
+		color: var(--link--color-text-hover);
+	}
+}
+
+// Fix GP dropdown arrow right padding
+.menu-item-has-children .dropdown-menu-toggle {
+	padding-right: 10px;
+}
+
+.menu-bar-items {
+	& .menu-bar-item {
+		> a {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+
+		&.whatsapp-item {
+			& a {
+				display: inline-flex;
+				align-self: center;
+				transition: opacity ease-in-out 0.2s;
+
+				&:hover {
+					opacity: 0.8;
+				}
+
+				& svg {
+					top: 0.25em;
+					position: relative;
+					width: 30px;
+					height: 30px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.site-logo {
+		& img {
+			max-width: 240px;
+		}
+	}
+
+	.main-nav {
+		& .menu {
+			& .menu-item {
+				margin-left: 0.2em;
+
+				& a {
+					padding: 7px 14px;
+				}
+			}
+		}
+	}
+	.menu-bar-items {
+		margin-left: 40px;
+	}
+}

@@ -1,0 +1,8 @@
+@function color($key, $variant: null) {
+	@if map-has-key($colors, $key) {
+		$color: map-get($colors, $key);
+		@return $color;
+	} @else {
+		@error "The #{$key} color could not be found in $brand_colors";
+	}
+}

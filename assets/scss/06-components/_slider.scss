@@ -1,0 +1,34 @@
+.metaslider.ms-theme-radix .flexslider ol.flex-control-nav:not(.flex-control-thumbs) li a,
+.metaslider.ms-theme-radix ul.rslides_tabs li a,
+.metaslider.ms-theme-radix div.slider-wrapper .nivo-controlNav:not(.nivo-thumbs-enabled) a,
+.metaslider.ms-theme-radix .coin-slider .cs-buttons a {
+	font-size: 2em !important;
+}
+
+.metaslider.ms-theme-radix > li.flex-slide-count {
+	font-size: 1em !important;
+}
+
+.metaslider.ms-theme-radix .flexslider ul.flex-direction-nav li a.flex-next:after {
+	content: '' !important;
+}
+
+.metaslider.ms-theme-radix .flexslider ul.flex-direction-nav li a.flex-next {
+	width: 35px !important;
+}
+
+.metaslider.ms-theme-radix .flexslider ul.flex-direction-nav li a.flex-prev {
+	left: 0 !important;
+}
+
+.metaslider.ms-theme-radix .flexslider ul.flex-direction-nav li a {
+	margin-top: 0;
+	top: 50% !important;
+	-webkit-transform: translateY(-50%) !important;
+	transform: translateY(-50%) !important;
+	overflow: hidden;
+	position: absolute;
+
+	margin: -20px 0 0;
+	text-indent: -9999px;
+}

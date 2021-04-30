@@ -1,0 +1,46 @@
+.wp-block-quote {
+	&.is-style-quotation-marks {
+		border: none !important;
+		padding: 0;
+		margin: 0.5em 0;
+
+		& p {
+			font-size: 1.2em;
+			font-weight: 700;
+			line-height: 1.4;
+			margin-bottom: 0.2em;
+			font-style: normal;
+
+			&::before {
+				content: '“';
+			}
+
+			&::after {
+				content: '”';
+			}
+
+			&::before,
+			&::after {
+			}
+		}
+
+		& cite {
+			font-style: normal;
+			font-size: 0.8em !important;
+			&::before {
+				content: '- ';
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.wp-block-quote {
+		&.is-style-quotation-marks {
+			& p {
+				font-size: 1.4em !important;
+				line-height: 1.6 !important;
+			}
+		}
+	}
+}

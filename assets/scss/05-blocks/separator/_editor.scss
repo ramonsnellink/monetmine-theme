@@ -1,0 +1,24 @@
+hr {
+	border-style: none;
+	border-bottom: 2px solid var(--main--color-text) !important;
+	clear: both;
+	margin-left: auto;
+	margin-right: auto;
+	height: 2px !important;
+	background-color: var(--main--color-text) !important;
+
+	&.wp-block-separator,
+	.wp-block-separator.is-style-wide {
+		border-bottom: 2px solid var(--main--color-text) !important;
+		opacity: 1;
+		height: 2px !important;
+		background-color: var(--main--color-text) !important;
+
+		.has-background &,
+		[class*='background-color'] &,
+		[style*='background-color'] &,
+		.wp-block-cover[style*='background-image'] & {
+			border-color: currentColor;
+		}
+	}
+}

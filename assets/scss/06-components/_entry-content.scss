@@ -1,0 +1,13 @@
+.entry-content {
+	& a:not(.button, .wp-block-button__link, .gb-button) {
+		text-decoration: underline;
+	}
+}
+
+.underline {
+	text-decoration: underline !important;
+}
+
+.entry-content > [class*='wp-block-']:not(:last-child) {
+	margin-bottom: 0;
+}

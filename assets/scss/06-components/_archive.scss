@@ -1,8 +1,9 @@
+// Sticky Class bij blog
+
 .archive,
 .blog,
 .search {
 	& > .grid-container {
-		max-width: none;
 	}
 
 	& .page-header {
@@ -23,25 +24,13 @@
 .blog .page,
 .search .post,
 .search .page {
-	max-width: none;
-	background-color: var(--color-gray-100);
-
 	& .inside-article {
-		max-width: 1280px;
-
-		margin: 0 auto;
-
-		display: grid;
-		grid-template-areas:
-			'image'
-			'title'
-			'content';
+		position: relative;
+		display: flex;
 	}
 
 	& .post-image {
 		width: 100%;
-		height: 100vw;
-		grid-area: image;
 		overflow: hidden;
 
 		& img {
@@ -65,61 +54,10 @@
 	}
 
 	& .entry-header {
-		padding: 0 $padding;
-		grid-area: title;
-	}
-	& .entry-content,
-	.entry-summary {
-		padding: $padding $padding $padding * 2 $padding;
-		margin-top: 0;
-		grid-area: content;
-	}
-
-	& .entry-meta {
-		margin-top: 0;
-		justify-self: end;
-		margin-top: 2rem;
-		z-index: 2;
-
-		grid-area: image;
-
-		& .gp-icon {
-			display: none;
-		}
-		a {
-			background-color: var(--button-hightlight-background-color);
-			color: var(--button-hightlight-text-color);
-			padding: 0.3rem 0.8rem;
-			z-index: 2;
-			font-weight: var(--font-weight-strong);
-			text-transform: uppercase;
-			font-size: 0.8em;
-
-			&:hover {
-				background-color: var(--button-hightlight-background-color-hover);
-				color: var(--button-hightlight-text-color-hover);
-			}
-		}
-	}
-
-	& .read-more {
-		width: 100%;
-		&::after {
-			content: '→';
-			position: absolute;
-
-			padding-left: 2px;
-			opacity: 0;
-			transition: padding-left 0.2s ease-in-out, opacity 0.2s ease-in-out;
-		}
-
-		&:hover {
-			&::after {
-				content: '→';
-				opacity: 1;
-				padding-left: 7px;
-			}
-		}
+		padding: $padding;
+		position: absolute;
+		bottom: 0;
+		left: 0;
 	}
 }
 
@@ -148,32 +86,14 @@
 	.search .post,
 	.search .page {
 		& .inside-article {
-			grid-template-columns: 1fr 1fr;
-			align-items: start;
-			grid-template-areas:
-				'title image'
-				'content image';
-
 			& .entry-header {
-				grid-area: title;
-				align-self: end;
-				margin-right: 20px;
 			}
 			& .entry-content,
 			.entry-summary {
-				grid-area: content;
-				margin-right: 20px;
 			}
 			& .post-image {
-				grid-area: image;
-				width: 640px;
-				height: 640px;
 				max-width: 100%;
 				margin-bottom: 0px;
-			}
-
-			& .entry-meta {
-				grid-area: image;
 			}
 		}
 	}
@@ -185,11 +105,6 @@
 	.search .post {
 		& .inside-article {
 			& .entry-header {
-				margin-right: 50px;
-			}
-			& .entry-content,
-			.entry-summary {
-				margin-right: 50px;
 			}
 		}
 	}

@@ -8,24 +8,6 @@
  // Remove "more" jump
  add_filter( 'generate_more_jump', '__return_false' );
  
-// Add Button to excerpt on blog/archive pages
-
-add_filter( 'wp_trim_excerpt', 'tu_excerpt_metabox_more' );
-function tu_excerpt_metabox_more( $excerpt ) {
-    $output = $excerpt;
-
-    if ( has_excerpt() && !is_single() && !is_page()) {
-        $output = sprintf( '%1$s <p class="read-more-container"><a class="read-more button" href="%2$s">%3$s</a></p>',
-            $excerpt,
-            get_permalink(),
-            __( 'Lees meer', 'generatepress' )
-        );
-    }
-	
-    return $output;
-}
-
-
 // Get the excerpt for a shortcode
 add_shortcode( 'excerpt', function() {
 
@@ -36,7 +18,24 @@ add_shortcode( 'excerpt', function() {
     
 } );
 
+// Remove Excerpt
+
+add_filter( 'wp_trim_excerpt', 'db_excerpt_metabox_remove' );
+function db_excerpt_metabox_remove( $excerpt ) {
+	$output = $excerpt;
+	
+	if ( has_excerpt() ) {
+		$output = '';
+	}
+	
+	return $output;
+}
+
+
+add_filter( 'generate_more_tag', '__return_false' );
+
 // add category after entry title
+
 
 add_action( 'generate_after_entry_title', function() {
     $cat = get_the_category();

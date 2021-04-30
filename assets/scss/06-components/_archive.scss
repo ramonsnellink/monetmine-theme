@@ -24,7 +24,7 @@
 .search .post,
 .search .page {
 	max-width: none;
-	background-color: var(--global--color-background-light);
+	background-color: var(--color-gray-100);
 
 	& .inside-article {
 		max-width: 1280px;
@@ -60,7 +60,7 @@
 		line-height: 1.3333333;
 
 		& a:hover {
-			color: var(--link--color-text-hover);
+			color: var(--link-text-color-hover);
 		}
 	}
 
@@ -87,8 +87,8 @@
 			display: none;
 		}
 		a {
-			background-color: var(--button--hightlight--color-background);
-			color: var(--button--hightlight--color-text);
+			background-color: var(--button-hightlight-background-color);
+			color: var(--button-hightlight-text-color);
 			padding: 0.3rem 0.8rem;
 			z-index: 2;
 			font-weight: var(--font-weight-strong);
@@ -96,8 +96,8 @@
 			font-size: 0.8em;
 
 			&:hover {
-				background-color: var(--button--hightlight--color-background-hover);
-				color: var(--button--hightlight--color-text-hover);
+				background-color: var(--button-hightlight-background-color-hover);
+				color: var(--button-hightlight-text-color-hover);
 			}
 		}
 	}
@@ -132,7 +132,7 @@
 	text-align: center;
 	padding-top: 100px;
 	padding-bottom: 100px;
-	background-color: var(--global--color-background-mid);
+	background-color: var(--color-gray-200);
 }
 
 .error404 .site {

@@ -1,12 +1,12 @@
 ::-moz-selection {
 	/* Code for Firefox */
 	color: black;
-	background: var(--global--color-background-highlight);
+	background: var(--color-primary);
 }
 
 ::selection {
 	color: black;
-	background: var(--global--color-background-highlight);
+	background: var(--color-primary);
 }
 
 body {
@@ -17,7 +17,7 @@ body {
 		'Segoe UI Symbol', 'Noto Color Emoji';
 	font-size: 1.125rem;
 	line-height: 1.8em;
-	color: var(--main--color-text);
+	color: var(--color--gray-500);
 }
 
 * {
@@ -31,10 +31,10 @@ html {
 
 // Links
 a {
-	color: var(--link--color-text);
+	color: var(--link-text-color);
 }
 a:hover {
-	color: var(--link--color-text-hover);
+	color: var(--link-text-color-hover);
 }
 
 hr {

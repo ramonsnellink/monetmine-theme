@@ -23,7 +23,7 @@
 }
 
 .page-hero {
-	background-color: var(--global--color-background-light);
+	background-color: var(--color-gray-100);
 	margin-bottom: $block-margin;
 
 	&-thumbnail img {
@@ -80,10 +80,10 @@
 			margin-top: 1rem;
 			display: block;
 			height: 4rem;
-			color: var(--link--color-text);
+			color: var(--link-text-color);
 
 			&:hover {
-				color: var(--link--color-text-hover);
+				color: var(--link-text-color-hover);
 
 				// -moz-transform: translate(0px, 5px);
 				// -webkit-transform: translate(0px, 5px);

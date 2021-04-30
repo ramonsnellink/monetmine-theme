@@ -5,8 +5,8 @@
 	padding: var(--button--padding-vertical) var(--button--padding-horizontal) !important;
 
 	&:not(.has-background) {
-		color: var(--button--color-text-hover);
-		background-color: var(--button--color-background) !important;
+		color: var(--button-text-color-hover);
+		background-color: var(--button-background-color) !important;
 	}
 }
 
@@ -33,15 +33,15 @@
 	&:not(.is-style-outline) {
 		.wp-block-button__link {
 			&:active {
-				color: var(--button--color-text-active) !important;
-				background-color: var(--button--color-background-hover) !important;
-				border-color: var(--button--color-background);
+				color: var(--button-text-color-active) !important;
+				background-color: var(--button-background-color-hover) !important;
+				border-color: var(--button-background-color);
 			}
 
 			&:hover {
-				color: var(--button--color-text-hover) !important;
-				background-color: var(--button--color-background-hover) !important;
-				border-color: var(--button--color-background);
+				color: var(--button-text-color-hover) !important;
+				background-color: var(--button-background-color-hover) !important;
+				border-color: var(--button-background-color);
 			}
 		}
 	}
@@ -49,29 +49,29 @@
 	// Outline Style.
 	&.is-style-outline {
 		.wp-block-button__link {
-			color: var(--button--color-background);
+			color: var(--button-background-color);
 			background: transparent;
 			// border: var(--button--border-width) solid currentColor;
 			// padding: var(--button--padding-vertical) var(--button--padding-horizontal);
 
 			&:active,
 			&:hover {
-				background-color: var(--button--color-background);
-				color: var(--button--color-text);
-				border-color: var(--button--color-background);
+				background-color: var(--button-background-color);
+				color: var(--button-text-color);
+				border-color: var(--button-background-color);
 			}
 
 			&.has-background {
-				border-color: var(--button--color-background);
+				border-color: var(--button-background-color);
 
 				&:active,
 				&:hover {
-					background-color: var(--button--color-background) !important;
+					background-color: var(--button-background-color) !important;
 				}
 			}
 
 			&.has-background:not(.has-text-color) {
-				color: var(--global--color-dark-gray);
+				color: var(--color-gray-800);
 			}
 
 			&.has-background.has-gray-background-color:not(.has-text-color),
@@ -89,7 +89,7 @@
 					&.has-background.has-red-background-color,
 					&.has-background.has-orange-background-color,
 					&.has-background.has-yellow-background-color {
-						color: var(--global--color-dark-gray);
+						color: var(--color-gray-800);
 					}
 				}
 			}
@@ -99,8 +99,8 @@
 
 				&:active,
 				&:hover {
-					color: var(--button--color-text) !important;
-					border-color: var(--button--color-background);
+					color: var(--button-text-color) !important;
+					border-color: var(--button-background-color);
 				}
 			}
 		}
@@ -108,30 +108,30 @@
 
 	// CTA highlight style.
 	&.is-style-button-highlight .wp-block-button__link:not(.has-background) {
-		color: var(--button--hightlight--color-text);
-		background-color: var(--button--hightlight--color-background) !important;
+		color: var(--button-hightlight-text-color);
+		background-color: var(--button-hightlight-background-color) !important;
 		width: 100% !important;
 
 		&:active {
-			color: var(--button--hightlight--color-text-hover);
-			background-color: var(--button--hightlight--color-background-hover) !important;
+			color: var(--button-hightlight-text-color-hover);
+			background-color: var(--button-hightlight-background-color-hover) !important;
 		}
 
 		&:hover {
-			color: var(--button--hightlight--color-text-hover);
-			background-color: var(--button--hightlight--color-background-hover) !important;
+			color: var(--button-hightlight-text-color-hover);
+			background-color: var(--button-hightlight-background-color-hover) !important;
 		}
 	}
 
 	&.is-style-button-light .wp-block-button__link:not(.has-background) {
-		background-color: var(--global--color-background-light) !important;
+		background-color: var(--color-gray-100) !important;
 
 		&:active {
-			background-color: var(--global--color-background-mid) !important;
+			background-color: var(--color-gray-200) !important;
 		}
 
 		&:hover {
-			background-color: var(--global--color-background-mid) !important;
+			background-color: var(--color-gray-200) !important;
 		}
 	}
 	// Squared Style
@@ -149,7 +149,7 @@
 
 		&:hover {
 			background-color: transparent !important;
-			color: var(--global--color-dark-yellow) !important;
+			color: var(--color-primary) !important;
 		}
 	}
 }

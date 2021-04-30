@@ -90,7 +90,7 @@
 			display: flex;
 			align-items: flex-end;
 
-			// color: var(--main--color-text);
+			// color: var(--text-color);
 			color: white !important;
 			text-transform: lowercase;
 			font-weight: var(--font-weight-strong);
@@ -100,7 +100,7 @@
 			transition: color ease-in-out 0.1s;
 
 			&:hover {
-				color: var(--link--color-text-hover) !important;
+				color: var(--link-text-color-hover) !important;
 				// background: rgba(246, 209, 94);
 				// background: linear-gradient(
 				// 	0deg,

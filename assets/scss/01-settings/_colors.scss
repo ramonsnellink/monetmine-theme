@@ -1,40 +1,37 @@
 :root {
-	--global--color-yellow: #f6d15e;
-	--global--color-dark-yellow: #eab204;
-	--global--color-dark-gray: #1c1c1b;
-	--global--color-gray: #807f7e;
-	--global--color-light-gray: #f7f6f5;
-	--global--color-lighter-gray: #ebe9e6;
+	--color-gray-100: #fafafa;
+	--color-gray-200: #f7f6f5;
+	--color-gray-300: #ebeae8;
+	--color-gray-500: #575757;
+	--color-gray-700: #383736;
+	--color-gray-800: #1f1e1d;
 
-	// Background Colors
-	--global--color-background-body: #fff;
-	--global--color-background-light: var(--global--color-light-gray);
-	--global--color-background-mid: var(--global--color-lighter-gray);
-	--global--color-background-dark: var(--global--color-dark-gray);
-	--global--color-background-highlight: var(--global--color-yellow);
-	--global--color-background-hr: var(--global--color-lighter-gray);
+	--color-primary: #4c8383;
+	--color-secondary: #f27f6d;
+
+	--color-primary-light: #f0f5f5;
+
 
 	// Main text
 
-	--main--color-text: var(--global--color-dark-gray);
-	--highlight--color-text: var(--global--color-dark-yellow);
+	--text-highlight-color: var(--color-primary)
 
 	// Standard button
-	--button--color-background: var(--global--color-lighter-gray);
-	--button--color-background-hover: var(--global--color-yellow);
+	--button-background-color: var(--color-gray-200);
+	--button-background-color-hover: var(--color-primary);
 
-	--button--color-text: var(--global--color-dark-gray);
-	--button--color-text-hover: var(--global--color-dark-gray);
+	--button-text-color: var(--color-gray-800);
+	--button-text-color-hover: var(--color-gray-800);
 
 	// Highlight button
-	--button--hightlight--color-background: var(--global--color-yellow);
-	--button--hightlight--color-background-hover: var(--global--color-dark-yellow);
+	--button-hightlight-background-color: var(--color-primary);
+	--button-hightlight-background-color-hover: var(--color-primary);
 
-	--button--hightlight--color-text: var(--global--color-dark-gray);
-	--button--hightlight--color-text-hover: var(--global--color-dark-gray);
+	--button-hightlight-text-color: var(--color-gray-800);
+	--button-hightlight-text-color-hover: var(--color-gray-800);
 
 	// Links
 
-	--link--color-text: var(--global--color-dark-yellow);
-	--link--color-text-hover: var(--global--color-yellow);
+	--link-text-color: var(--color-primary);
+	--link-text-color-hover: var(--color-primary);
 }

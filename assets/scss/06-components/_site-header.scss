@@ -13,7 +13,7 @@
 
 .progress-bar {
 	height: 2px;
-	background: var(--global--color-background-highlight); /* Progress bar color */
+	background: var(--color-primary); /* Progress bar color */
 	width: 0%;
 }
 
@@ -57,7 +57,7 @@
 			margin: 0.5em 0.3em;
 
 			& a {
-				color: var(--main--color-text);
+				color: var(--text-color);
 				font-weight: var(--font-weight-strong);
 				font-size: 0.8em;
 				text-transform: lowercase;
@@ -67,8 +67,8 @@
 				border-radius: var(--button--border-radius);
 
 				&:hover {
-					background-color: var(--global--color-background-light);
-					color: var(--global--color-dark-yellow);
+					background-color: var(--color-gray-100);
+					color: var(--color-primary);
 				}
 			}
 
@@ -88,7 +88,7 @@
 			}
 
 			&.current-menu-item {
-				background-color: var(--global--color-background-mid);
+				background-color: var(--color-gray-200);
 				border-radius: var(--button--border-radius);
 			}
 		}
@@ -96,14 +96,14 @@
 }
 
 .menu-toggle {
-	color: var(--main--color-text);
+	color: var(--text-color);
 
 	& svg {
-		color: var(--main--color-text);
+		color: var(--text-color);
 	}
 
 	&:hover {
-		color: var(--link--color-text-hover);
+		color: var(--link-text-color-hover);
 	}
 }
 

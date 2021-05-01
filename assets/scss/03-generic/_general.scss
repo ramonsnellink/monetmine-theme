@@ -1,12 +1,12 @@
 ::-moz-selection {
 	/* Code for Firefox */
 	color: black;
-	background: var(--color-primary);
+	background: var(--color-secondary);
 }
 
 ::selection {
 	color: black;
-	background: var(--color-primary);
+	background: var(--color-secondary);
 }
 
 body {
@@ -15,9 +15,9 @@ body {
 	font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
 		'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
 		'Segoe UI Symbol', 'Noto Color Emoji';
-	font-size: 1.125rem;
+	font-size: 1.3rem;
 	line-height: 1.8em;
-	color: var(--color--gray-500);
+	color: var(--color-gray-500);
 }
 
 * {
@@ -70,6 +70,7 @@ h4,
 h5,
 h6 {
 	font-weight: var(--font-weight-strong);
+	color: var(--color-gray-700);
 }
 
 h1 {

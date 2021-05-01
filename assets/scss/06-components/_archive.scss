@@ -1,12 +1,13 @@
 // Sticky Class bij blog
+// Misschien bij hover op inside article de color veranderen? En dan bij titel inherit?
 
 .archive,
 .blog,
 .search {
-	& > .grid-container {
+	> .grid-container {
 	}
 
-	& .page-header {
+	.page-header {
 		text-align: center;
 		padding: 1em;
 	}
@@ -24,40 +25,55 @@
 .blog .page,
 .search .post,
 .search .page {
-	& .inside-article {
+	.inside-article {
 		position: relative;
 		display: flex;
+		color: white;
+		transition: color 0.1s ease-in-out;
+
+		&:hover {
+			color: var(--color-primary);
+		}
 	}
 
-	& .post-image {
+	.post-image {
 		width: 100%;
 		overflow: hidden;
+		margin-bottom: 0px;
 
-		& img {
+		img {
 			width: 100%;
 			height: 100%;
-			transition: transform 0.4s ease-in-out;
 
-			&:hover {
-				transform: scale(1.02);
+			:hover {
 			}
 		}
 	}
 
-	& .entry-title {
-		font-size: 1.5em;
-		line-height: 1.3333333;
+	.entry-title {
+		font-size: 1.1em;
+		line-height: 1.4;
+		font-weight: bold;
 
-		& a:hover {
-			color: var(--link-text-color-hover);
+		a {
+			color: inherit;
+			display: block;
+			padding: $padding * 1.5;
+			padding-top: $padding * 3;
 		}
+
+		// a:hover {
+		// 	color: var(--link-text-color-hover);
+		// }
 	}
 
-	& .entry-header {
-		padding: $padding;
+	.entry-header {
 		position: absolute;
 		bottom: 0;
 		left: 0;
+		width: 100%;
+		background: rgb(0, 0, 0);
+		background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 80%);
 	}
 }
 
@@ -85,13 +101,13 @@
 	.blog .page,
 	.search .post,
 	.search .page {
-		& .inside-article {
-			& .entry-header {
+		.inside-article {
+			.entry-header {
 			}
-			& .entry-content,
+			.entry-content,
 			.entry-summary {
 			}
-			& .post-image {
+			.post-image {
 				max-width: 100%;
 				margin-bottom: 0px;
 			}
@@ -103,8 +119,8 @@
 	.archive .post,
 	.blog .post,
 	.search .post {
-		& .inside-article {
-			& .entry-header {
+		.inside-article {
+			.entry-header {
 			}
 		}
 	}

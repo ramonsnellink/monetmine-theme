@@ -63,3 +63,6 @@ add_filter( 'wp_get_attachment_image_attributes', function( $attr ) {
     return $attr;
 } );
 
+add_action( 'init', function() {
+    register_nav_menu( 'third-menu', __( 'Third Menu' ) );
+} );

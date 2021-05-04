@@ -28,11 +28,14 @@
 	.inside-article {
 		position: relative;
 		display: flex;
-		color: white;
 		transition: color 0.1s ease-in-out;
 
-		&:hover {
-			color: var(--color-primary);
+		h2 {
+			color: white;
+		}
+
+		&:hover .post-image img {
+			transform: scale(1.01);
 		}
 	}
 
@@ -45,13 +48,15 @@
 			width: 100%;
 			height: 100%;
 
+			transition: transform 0.2s ease-in-out;
+
 			:hover {
 			}
 		}
 	}
 
 	.entry-title {
-		font-size: 1.1em;
+		font-size: 0.9em;
 		line-height: 1.4;
 		font-weight: bold;
 
@@ -91,6 +96,12 @@
 
 .error404 .site {
 	background-color: inherit;
+}
+
+.taxonomy-description {
+	max-width: 800px;
+	margin: 0 auto;
+	text-align: left;
 }
 
 // Tablet+

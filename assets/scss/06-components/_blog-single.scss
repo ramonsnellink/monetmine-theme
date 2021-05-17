@@ -11,101 +11,51 @@
 
 	& .inside-article {
 		margin: 0 auto;
+		display: grid;
 
-		& .entry-header {
-			padding: 40px 20px 40px 20px;
-			background-color: var(--color-gray-100);
-
-			margin: 0 auto;
-
-			& .entry-title {
-				margin: 0 auto;
-				max-width: 800px;
-				margin-bottom: 20px;
-			}
-
-			& .entry-category {
-				max-width: 800px;
-				margin: 0 auto;
-				margin-bottom: 20px;
-
-				&-link {
-					background-color: var(--button-hightlight-background-color);
-					color: var(--button-hightlight-text-color);
-					padding: 0.3rem 0.8rem;
-					font-weight: var(--font-weight-strong);
-					text-transform: uppercase;
-					font-size: 0.8em;
-
-					&:hover {
-						background-color: var(--button-hightlight-background-color-hover);
-						color: var(--button-hightlight-text-color-hover);
-					}
-				}
-			}
-
-			& .post__excerpt {
-				margin: 0 auto;
-				max-width: 800px;
-				padding-top: 10px;
-			}
-		}
-
-		& .entry-content {
+		.entry-content {
 			max-width: 800px;
 			margin: 0 auto;
 			padding: 0px 20px 60px 20px;
 		}
-		& .entry-meta {
-			max-width: 1285px;
-			padding: 20px;
-			margin: 0 auto;
-		}
+	}
 
-		& img,
-		iframe {
-			margin-bottom: 0px;
-			max-width: 1285px;
-			width: 100vw;
-			margin-left: 50%;
-			transform: translateX(-50%);
-		}
+	p > img {
+		margin-bottom: 5px;
 	}
 }
 
-@media screen and (min-width: 730px) {
+@media screen and (min-width: 820px) {
 	.single-post {
-		& .inside-article {
+		.inside-article {
 			// & .entry-header {
 			// 	max-width: 800px;
 			// }
 			& img,
 			iframe {
-				// margin-bottom: 0px;
-				// max-width: 1245px;
+				max-width: 1245px;
 				width: 800px;
 				padding: 0px 20px;
-				// margin-left: 50%;
-				// transform: translateX(-50%);
+				margin-left: 50%;
+				transform: translateX(-50%);
 			}
 		}
 	}
 }
+
+@media screen and (min-width: 768px) {
+	.single-post {
+		.inside-article {
+		}
+	}
+}
+
 @media screen and (min-width: 1024px) {
 	.single-post {
-		& .inside-article {
-			& .entry-header {
-				padding: 60px 20px 80px 20px;
-				max-width: inherit;
-			}
-
+		.inside-article {
 			& img,
 			iframe {
-				// margin-bottom: 0px;
-				// max-width: 1245px;
 				width: 100vw;
-				// margin-left: 50%;
-				// transform: translateX(-50%);
 			}
 		}
 	}

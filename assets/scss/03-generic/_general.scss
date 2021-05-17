@@ -1,12 +1,12 @@
 ::-moz-selection {
 	/* Code for Firefox */
 	color: black;
-	background: var(--color-secondary);
+	background: var(--color-primary);
 }
 
 ::selection {
 	color: black;
-	background: var(--color-secondary);
+	background: var(--color-primary);
 }
 
 body {
@@ -51,7 +51,7 @@ ul {
 form.fluent_form_1 .wpf_has_custom_css.ff-btn-submit {
 	text-align: center;
 	padding: var(--button--padding-vertical) var(--button--padding-horizontal);
-	font-weight: var(--font-weight-strong);
+	font-weight: var(--font-weight-bold);
 	font-size: 0.9em;
 }
 
@@ -69,7 +69,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-weight: var(--font-weight-strong);
+	font-weight: var(--font-weight-bold);
 	color: var(--color-gray-700);
 }
 

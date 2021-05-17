@@ -1,7 +1,7 @@
 .wp-block-button__link {
 	// Extend button style
 	@include button-style();
-	font-weight: var(--font-weight-strong) !important;
+	font-weight: var(--font-weight-bold) !important;
 	padding: var(--button--padding-vertical) var(--button--padding-horizontal) !important;
 
 	&:not(.has-background) {

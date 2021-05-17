@@ -7,6 +7,8 @@
 
  // Remove "more" jump
  add_filter( 'generate_more_jump', '__return_false' );
+
+
  
 // Get the excerpt for a shortcode
 add_shortcode( 'excerpt', function() {
@@ -63,6 +65,18 @@ add_filter( 'wp_get_attachment_image_attributes', function( $attr ) {
     return $attr;
 } );
 
+// Register third menu for Category filter
+
 add_action( 'init', function() {
     register_nav_menu( 'third-menu', __( 'Third Menu' ) );
+} );
+
+// Remove Entry Header from posts
+
+add_filter( 'generate_show_entry_header', function( $show ) {
+    if ( is_single() ) {
+        $show = false;
+    }
+
+    return $show;
 } );

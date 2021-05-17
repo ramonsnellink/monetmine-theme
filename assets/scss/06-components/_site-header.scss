@@ -54,20 +54,18 @@
 .main-nav {
 	& .menu {
 		& .menu-item {
-			margin: 0.5em 0.3em;
+			margin: 0.5em 0.2em;
 
 			& a {
 				color: var(--text-color);
-				font-weight: var(--font-weight-strong);
+				font-weight: var(--font-weight-semibold);
 				font-size: 0.8em;
 				text-transform: lowercase;
 
 				line-height: 1.5;
 				padding: var(--button--padding-vertical) var(--button--padding-horizontal);
-				border-radius: var(--button--border-radius);
 
 				&:hover {
-					background-color: var(--color-gray-100);
 					color: var(--color-primary);
 				}
 			}
@@ -88,8 +86,6 @@
 			}
 
 			&.current-menu-item {
-				background-color: var(--color-gray-200);
-				border-radius: var(--button--border-radius);
 			}
 		}
 	}

@@ -1,12 +1,12 @@
 :root {
-	--button--border-radius: 5px;
+	--button--border-radius: 25px;
 
 	--font-weight-normal: 400;
 	--font-weight-semibold: 500;
 	--font-weight-bold: 700;
 
-	--button--padding-vertical: 10px;
-	--button--padding-horizontal: calc(2 * var(--button--padding-vertical));
+	--button--padding-vertical: 8px;
+	--button--padding-horizontal: calc(4 * var(--button--padding-vertical));
 }
 
 $sm: 640px;

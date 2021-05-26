@@ -14,12 +14,9 @@
 		}
 	}
 
-	&-content {
-		padding: $padding * 2 $padding;
+	&-content-container {
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
-
 		border-top-left-radius: 40px;
 		border-top-right-radius: 40px;
 		margin-top: -50px;
@@ -28,10 +25,48 @@
 		background-color: var(--color-gray-100);
 	}
 
+	&-content {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		height: 100%;
+		padding: $padding * 2 $padding;
+	}
+
 	&-title {
 		font-size: 1.8em;
 		&.post-hero-title {
 			font-size: $h1-font-size;
+		}
+	}
+
+	&-back {
+		align-self: flex-start;
+		border-bottom: 1px solid var(--color-gray-300);
+		width: 100%;
+		padding: $padding / 2.5 $padding;
+		font-size: 0.75em;
+		z-index: 2;
+
+		font-weight: var(--font-weight-bold);
+		text-transform: uppercase;
+
+		a {
+			color: var(--color-gray-400);
+			&:hover {
+				color: var(--link-text-color);
+
+				svg {
+					fill: var(--link-text-color);
+				}
+			}
+
+			svg {
+				transform: rotate(90deg);
+				top: 2px;
+				fill: var(--color-gray-400);
+				position: relative;
+			}
 		}
 	}
 
@@ -42,13 +77,15 @@
 
 	&-category {
 		text-transform: uppercase;
-		font-size: 0.7em;
+		font-size: 0.75em;
 		margin-bottom: 20px;
+		font-weight: var(--font-weight-semibold);
 	}
 
 	&-nav {
 		font-weight: var(--font-weight-semibold);
-		font-size: 0.8em;
+		font-size: 0.9em;
+		margin-top: -10px;
 
 		a {
 			position: relative;
@@ -62,7 +99,7 @@
 				display: inline-block;
 				position: absolute;
 				margin-top: -5px;
-				right: -16px;
+				right: -15px;
 				bottom: 33%;
 				width: 6px;
 				height: 6px;
@@ -78,9 +115,6 @@
 
 @media screen and (min-width: 768px) {
 	.page-hero {
-		&-content {
-			padding: $padding * 2;
-		}
 	}
 }
 @media only screen and (min-width: 1024px) {
@@ -91,42 +125,55 @@
 	}
 
 	.page-hero {
-		&-content {
-			padding-right: 2rem;
+		&-content-container {
 			width: 50%;
 			max-width: $xxl / 2;
 			margin-top: 0px;
 			border-radius: 0px;
 		}
 
+		&-content {
+			padding-right: $padding * 2;
+		}
+
 		&-thumbnail {
 			width: 50%;
+		}
+		&-title {
+			font-size: 2.7em;
+
+			&.post-hero-title {
+				font-size: $h1-font-size-desktop;
+			}
+		}
+		&-category {
+			text-transform: uppercase;
+			font-size: 0.7em;
+		}
+		&-back {
+			border: 0px;
+			font-size: 0.65em;
+			padding: $padding $padding;
+			margin-bottom: -40px;
 		}
 	}
 }
 
 @media only screen and (min-width: 1280px) {
 	.page-hero {
-		&-content {
-			padding-right: 4rem;
+		&-content-container {
 			width: 50%;
 		}
 
-		&-title {
-			font-size: 3em;
-
-			&.post-hero-title {
-				font-size: $h1-font-size-desktop;
-			}
+		&-content {
+			padding-right: $padding * 4;
 		}
 	}
 }
 
 @media screen and (min-width: 1540px) {
 	.page-hero {
-		&-content {
-			padding: $padding;
-			padding-right: 4rem;
+		&-content-container {
 			width: 50%;
 		}
 	}

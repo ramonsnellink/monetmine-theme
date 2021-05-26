@@ -35,7 +35,7 @@
 		}
 
 		&:hover .post-image img {
-			transform: scale(1.01);
+			transform: scale3d(1.04, 1.04, 1.04);
 		}
 	}
 
@@ -48,10 +48,7 @@
 			width: 100%;
 			height: 100%;
 
-			transition: transform 0.2s ease-in-out;
-
-			:hover {
-			}
+			transition: transform 0.5s ease-in-out;
 		}
 	}
 
@@ -66,10 +63,6 @@
 			padding: $padding * 1.5;
 			padding-top: $padding * 3;
 		}
-
-		// a:hover {
-		// 	color: var(--link-text-color-hover);
-		// }
 	}
 
 	.entry-header {
@@ -80,6 +73,12 @@
 		background: rgb(0, 0, 0);
 		background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 80%);
 	}
+}
+
+.category-summary {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
 }
 
 // No Results
@@ -100,7 +99,8 @@
 
 .taxonomy-description {
 	max-width: 800px;
-	margin: 0 auto;
+	margin: 0px auto;
+	padding: 20px 0px;
 	text-align: left;
 }
 

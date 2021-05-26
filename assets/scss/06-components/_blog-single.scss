@@ -1,15 +1,15 @@
 // Werkt niet, want er zit soms meer dan alleen een IMG in een P...
 
 .single-post {
-	& .site.grid-container {
+	.site.grid-container {
 		max-width: none;
 	}
-	& .site-content {
+	.site-content {
 		padding: 0;
 		overflow-x: hidden;
 	}
 
-	& .inside-article {
+	.inside-article {
 		margin: 0 auto;
 		display: grid;
 

@@ -2,19 +2,24 @@
 	--color-gray-100: #fafafa;
 	--color-gray-200: #f7f6f5;
 	--color-gray-300: #ebeae8;
+	--color-gray-400: #919191;
 	--color-gray-500: #575757;
+	--color-gray-600: #4f4d4c;
 	--color-gray-700: #383736;
 	--color-gray-800: #1f1e1d;
 
 	--color-primary: #4c8383;
 	--color-secondary: #f27f6d;
 
+	--color-primary-hover: #65acac;
 	--color-primary-light: #f0f5f5;
 
+	--color-secondary-hover: #f59a8c;
 
 	// Main text
 
-	--text-highlight-color: var(--color-primary)
+	--text-highlight-color: var(--color-primary);
+	--text-color: var(--color-gray-500);
 
 	// Standard button
 	--button-background-color: var(--color-gray-200);
@@ -23,15 +28,23 @@
 	--button-text-color: var(--color-gray-800);
 	--button-text-color-hover: var(--color-gray-800);
 
-	// Highlight button
-	--button-hightlight-background-color: var(--color-primary);
-	--button-hightlight-background-color-hover: var(--color-primary);
+	// Primary
+	--button-primary-background-color: var(--color-primary);
+	--button-primary-background-color-hover: var(--color-primary-hover);
 
-	--button-hightlight-text-color: var(--color-gray-800);
-	--button-hightlight-text-color-hover: var(--color-gray-800);
+	--button-primary-text-color: var(--color-gray-100);
+	--button-primary-text-color-hover: var(--color-gray-100);
+
+	// Secondary
+
+	--button-secondary-background-color: var(--color-secondary);
+	--button-secondary-background-color-hover: var(--color-secondary-hover);
+
+	--button-secondary-text-color: var(--color-gray-100);
+	--button-secondary-text-color-hover: var(--color-gray-100);
 
 	// Links
 
 	--link-text-color: var(--color-primary);
-	--link-text-color-hover: var(--color-primary);
+	--link-text-color-hover: var(--color-primary-hover);
 }

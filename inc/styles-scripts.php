@@ -12,10 +12,6 @@ add_action( 'wp_enqueue_scripts', 'rfl_styles',  99  );
 
 
 
-if (!is_single() || is_page()) {
-
-}
-
 
 function cat_dropdown( ){
 

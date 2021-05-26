@@ -47,35 +47,47 @@
 }
 
 .main-navigation.toggled .main-nav li {
-	width: inherit;
-	text-align: center;
+	width: 100%;
+	text-align: left;
+}
+
+.main-navigation.toggled .main-nav {
+	.menu {
+		height: 100vh;
+	}
+
+	background-color: var(--color-primary-light);
+
+	> ul {
+		align-items: flex-start;
+		display: flex;
+		flex-wrap: nowrap;
+		flex-direction: column;
+		align-content: flex-start;
+		padding-top: 20px;
+	}
 }
 
 .main-nav {
 	& .menu {
 		& .menu-item {
-			margin: 0.5em 0.2em;
+			margin: 0.1em 0.2em;
 
 			& a {
-				color: var(--text-color);
-				font-weight: var(--font-weight-semibold);
-				font-size: 0.8em;
-				text-transform: lowercase;
-
+				color: var(--link-text-color);
+				font-weight: var(--font-weight-bold);
+				font-size: 1.7em;
 				line-height: 1.5;
-				padding: var(--button--padding-vertical) var(--button--padding-horizontal);
+				padding: 7px 20px;
 
 				&:hover {
-					color: var(--color-primary);
+					color: var(--link-text-color-hover);
 				}
 			}
 
 			& .sub-menu {
-				border-radius: 10px;
-				box-shadow: 0 2.1px 3.3px rgba(0, 0, 0, 0.036), 0 3.9px 10px rgba(0, 0, 0, 0.054),
-					0 31px 80px rgba(0, 0, 0, 0.09);
 				padding: 0.5em;
-
+				font-size: 0.7em;
 				background-color: white;
 				& .menu-item {
 					margin-left: 0px;
@@ -86,6 +98,9 @@
 			}
 
 			&.current-menu-item {
+				> a {
+					color: var(--link-text-color);
+				}
 			}
 		}
 	}
@@ -101,6 +116,16 @@
 	&:hover {
 		color: var(--link-text-color-hover);
 	}
+
+	&:visited {
+		color: var(--text-color);
+	}
+}
+
+.main-navigation.has-branding .menu-toggle,
+.main-navigation.has-sticky-branding.navigation-stick .menu-toggle {
+	order: -1 !important;
+	padding-right: 0px !important;
 }
 
 // Fix GP dropdown arrow right padding
@@ -120,16 +145,49 @@
 				display: inline-flex;
 				align-self: center;
 				transition: opacity ease-in-out 0.2s;
+				color: var(--color-secondary);
 
 				&:hover {
 					opacity: 0.8;
 				}
 
 				& svg {
-					top: 0.25em;
+					top: 4px;
 					position: relative;
-					width: 30px;
-					height: 30px;
+					width: 25px;
+					height: 25px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.main-nav {
+		& .menu {
+			height: initial;
+			background-color: initial;
+			font-size: initial;
+			color: initial;
+
+			.menu-item {
+				margin: 0.5em 0.2em;
+
+				& a {
+					color: var(--text-color);
+					font-weight: var(--font-weight-semibold);
+					font-size: 1em;
+					text-transform: lowercase;
+					line-height: 1.5;
+					padding: var(--button--padding-vertical) var(--button--padding-horizontal);
+
+					&:hover {
+						color: var(--link-text-color);
+					}
+				}
+
+				& .sub-menu {
+					font-size: 1em;
 				}
 			}
 		}

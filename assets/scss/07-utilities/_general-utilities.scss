@@ -33,3 +33,11 @@
 .gb-grid-wrapper > .gb-grid-column > .gb-container.no-stretch {
 	height: inherit;
 }
+
+.invert {
+	filter: invert(1);
+}
+
+.underline {
+	text-decoration: underline;
+}

@@ -8,25 +8,9 @@
 	text-align: center;
 	padding: var(--button--padding-vertical) var(--button--padding-horizontal);
 	font-weight: var(--font-weight-bold);
-	font-size: 0.9em;
+	font-size: 0.8em;
 	text-transform: lowercase;
 	text-decoration: none;
-
-	&::after {
-		content: '→';
-		position: absolute;
-		padding-left: 2px;
-		opacity: 0;
-		transition: padding-left 0.2s ease-in-out, opacity 0.2s ease-in-out;
-	}
-
-	&:hover {
-		&::after {
-			content: '→';
-			opacity: 1;
-			padding-left: 7px;
-		}
-	}
 
 	&:not(.has-background) {
 		color: var(--button-text-color);

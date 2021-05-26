@@ -1,47 +1,68 @@
-.wp-block-button__link {
+/**
+ * Button
+ */
+.site .button,
+input[type='submit'],
+input[type='reset'],
+.wp-block-search__button,
+.wp-block-button .wp-block-button__link {
 	// Extend button style
 	@include button-style();
-	font-weight: var(--font-weight-bold) !important;
-	padding: var(--button--padding-vertical) var(--button--padding-horizontal) !important;
+}
 
-	&:not(.has-background) {
+// .wp-block-button.is-style-button-highlight .wp-block-button__link:not(.has-background) {
+// 	color: var(--button-primary-text-color);
+// 	background-color: var(--button-primary-background-color);
+
+// 	&:active {
+// 		color: var(--button-primary-text-color-hover);
+// 		background-color: var(--button-primary-background-color-hover);
+// 	}
+
+// 	&:hover {
+// 		color: var(--button-primary-text-color-hover);
+// 		background-color: var(--button-primary-background-color-hover);
+// 	}
+// }
+
+.site .button,
+input[type='submit'],
+input[type='reset'],
+.wp-block-search .wp-block-search__button,
+.wp-block-file .wp-block-file__button {
+	&:active {
 		color: var(--button-text-color-hover);
-		background-color: var(--button-background-color) !important;
+		background-color: var(--button-background-color-hover);
+	}
+
+	&:hover {
+		color: var(--button-text-color-hover);
+		background-color: var(--button-background-color-hover);
 	}
 }
 
 /**
- * Block Options
- */
-
-// The parent container does not need outer margins applied.
-// The children should all have top and bottom margins.
-[data-block].wp-block-buttons {
-	margin-top: 0;
-	margin-bottom: 0;
-
-	&.is-full .wp-block-button {
-		width: 100%;
-		& .wp-block-button__link {
-			width: 100%;
-		}
-	}
-}
-
+  * Block Options
+  */
 .wp-block-button {
 	// Target the default and filled button states.
 	&:not(.is-style-outline) {
 		.wp-block-button__link {
 			&:active {
-				color: var(--button-text-color-active) !important;
-				background-color: var(--button-background-color-hover) !important;
-				border-color: var(--button-background-color);
+				color: var(--button-text-color-hover);
+				background-color: var(--button-background-color-hover);
+				border-color: var(--button-background-color-hover);
 			}
 
 			&:hover {
-				color: var(--button-text-color-hover) !important;
-				background-color: var(--button-background-color-hover) !important;
+				color: var(--button-text-color-hover);
+				background-color: var(--button-background-color-hover);
 				border-color: var(--button-background-color);
+			}
+
+			&:focus {
+				color: var(--button-text-color-hover);
+				background-color: var(--button-background-color-hover);
 			}
 		}
 	}
@@ -49,29 +70,20 @@
 	// Outline Style.
 	&.is-style-outline {
 		.wp-block-button__link {
-			color: var(--button-background-color);
-			background: transparent;
-			// border: var(--button--border-width) solid currentColor;
 			// padding: var(--button--padding-vertical) var(--button--padding-horizontal);
 
-			&:active,
-			&:hover {
-				background-color: var(--button-background-color);
-				color: var(--button-text-color);
-				border-color: var(--button-background-color);
+			&:not(.has-background) {
+				background: transparent;
 			}
 
-			&.has-background {
+			&:not(.has-background):not(.has-text-color) {
+				background: transparent;
+				color: var(--button-background-color);
 				border-color: var(--button-background-color);
-
-				&:active,
-				&:hover {
-					background-color: var(--button-background-color) !important;
-				}
 			}
 
 			&.has-background:not(.has-text-color) {
-				color: var(--color-gray-800);
+				color: currentColor;
 			}
 
 			&.has-background.has-gray-background-color:not(.has-text-color),
@@ -82,79 +94,164 @@
 
 			.is-dark-theme & {
 				&:not(.has-text-color) {
-					&.has-background.has-white-background-color,
-					&.has-background.has-green-background-color,
-					&.has-background.has-blue-background-color,
-					&.has-background.has-purple-background-color,
-					&.has-background.has-red-background-color,
-					&.has-background.has-orange-background-color,
-					&.has-background.has-yellow-background-color {
+					&.has-background {
 						color: var(--color-gray-800);
+					}
+
+					&.has-background.has-gray-background-color,
+					&.has-background.has-dark-gray-background-color,
+					&.has-background.has-black-background-color {
+						color: white;
 					}
 				}
 			}
 
-			&.has-text-color {
+			&.has-text-color,
+			&.has-background.has-text-color {
 				border-color: currentColor;
+			}
 
-				&:active,
-				&:hover {
-					color: var(--button-text-color) !important;
+			&:active,
+			&:hover {
+				color: var(--button-text-color) !important;
+				background: var(--button-background-color) !important;
+				border-color: var(--button-background-color);
+
+				&.has-text-color {
 					border-color: var(--button-background-color);
 				}
+			}
+
+			&:focus {
+				color: var(--button-background-color) !important;
+				background: transparent !important;
 			}
 		}
 	}
 
-	// CTA highlight style.
-	&.is-style-button-highlight .wp-block-button__link:not(.has-background) {
-		color: var(--button-hightlight-text-color);
-		background-color: var(--button-hightlight-background-color) !important;
-		width: 100% !important;
+	// Primary Color Button
+	&.is-style-button-primary .wp-block-button__link:not(.has-background) {
+		color: var(--button-primary-text-color);
+		background-color: var(--button-primary-background-color);
 
 		&:active {
-			color: var(--button-hightlight-text-color-hover);
-			background-color: var(--button-hightlight-background-color-hover) !important;
+			color: var(--button-primary-text-color-hover);
+			background-color: var(--button-primary-background-color-hover);
 		}
 
 		&:hover {
-			color: var(--button-hightlight-text-color-hover);
-			background-color: var(--button-hightlight-background-color-hover) !important;
+			color: var(--button-primary-text-color-hover);
+			background-color: var(--button-primary-background-color-hover);
 		}
 	}
 
+	// Secondary Color Button
+	&.is-style-button-secondary .wp-block-button__link:not(.has-background) {
+		color: var(--button-secondary-text-color);
+		background-color: var(--button-secondary-background-color);
+
+		&:active {
+			color: var(--button-secondary-text-color-hover);
+			background-color: var(--button-secondary-background-color-hover);
+		}
+
+		&:hover {
+			color: var(--button-secondary-text-color-hover);
+			background-color: var(--button-secondary-background-color-hover);
+		}
+	}
+
+	// light button style
 	&.is-style-button-light .wp-block-button__link:not(.has-background) {
-		background-color: var(--color-gray-100) !important;
+		background-color: var(--color-gray-100);
 
 		&:active {
-			background-color: var(--color-gray-200) !important;
+			background-color: var(--color-gray-200);
 		}
 
 		&:hover {
-			background-color: var(--color-gray-200) !important;
+			background-color: var(--color-gray-200);
 		}
 	}
+
+	// Underline Button Primary
+	&.is-style-button-underline-primary .wp-block-button__link:not(.has-background) {
+		background-color: transparent;
+		border-bottom: 1px solid var(--button-primary-background-color);
+		border-radius: 0px;
+		padding: 0px;
+
+		&::after {
+			content: url('../icons/chevron-down.svg');
+		}
+
+		&:active {
+			background-color: transparent;
+		}
+
+		&:hover {
+			background-color: transparent;
+			color: var(--button-primary-background-color);
+
+			&::after {
+			}
+		}
+	}
+
+	// Simple button Secondary
+	&.is-style-button-underline-secondary .wp-block-button__link:not(.has-background) {
+		background-color: transparent;
+		border-bottom: 1px solid var(--button-secondary-background-color);
+		border-radius: 0px;
+		padding: 0px;
+
+		&:active {
+			background-color: transparent;
+		}
+
+		&:hover {
+			background-color: transparent;
+			color: var(--button-secondary-background-color);
+		}
+	}
+
 	// Squared Style
-	&.is-style-squared {
+	.is-style-squared .wp-block-button__link {
 		border-radius: 0;
-	}
-
-	&.is-style-button-simple .wp-block-button__link:not(.has-background) {
-		background-color: transparent !important;
-		text-decoration: underline !important;
-
-		&:active {
-			background-color: transparent !important;
-		}
-
-		&:hover {
-			background-color: transparent !important;
-			color: var(--color-primary) !important;
-		}
 	}
 }
 
-.is-style-outline .wp-block-button__link[style*='radius'],
-.wp-block-button__link[style*='radius'] {
+.is-style-outline .wp-block-button__link[style*='radius']:focus,
+.wp-block-button a.wp-block-button__link[style*='radius']:focus {
 	outline-offset: 2px;
+	outline: 2px dotted var(--button-background-color);
+}
+
+.wp-block-buttons.is-full .wp-block-button {
+	width: 100%;
+	& .wp-block-button__link {
+		width: 100%;
+	}
+}
+
+// GeneratePress:
+
+.gb-button.arrow-after {
+	position: relative;
+	display: inline-block;
+	&::after {
+		content: '→';
+		position: absolute;
+		padding-left: 2px;
+		opacity: 0;
+		transition: padding-left 0.2s ease-in-out, opacity 0.2s ease-in-out;
+	}
+
+	&:hover {
+		&::after {
+			content: '→';
+			opacity: 1;
+			padding-left: 7px;
+		}
+	}
 }

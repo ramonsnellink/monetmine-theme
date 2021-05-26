@@ -8,8 +8,15 @@
 // Buttons
 add_action('init', function() {
 	register_block_style('core/button', [
-		'name' => 'button-highlight',
-		'label' => __('Highlight button', 'generatepress'),
+		'name' => 'button-primary',
+		'label' => __('Primary button', 'generatepress'),
+	]);
+});
+
+add_action('init', function() {
+	register_block_style('core/button', [
+		'name' => 'button-secondary',
+		'label' => __('Secondary button', 'generatepress'),
 	]);
 });
 
@@ -22,10 +29,18 @@ add_action('init', function() {
 
 add_action('init', function() {
 	register_block_style('core/button', [
-		'name' => 'button-simple',
-		'label' => __('Simple Button - Without background', 'generatepress'),
+		'name' => 'button-underline-primary',
+		'label' => __('Underline Button - Primary', 'generatepress'),
 	]);
 });
+
+add_action('init', function() {
+	register_block_style('core/button', [
+		'name' => 'button-underline-secondary',
+		'label' => __('Underline Button - secondary', 'generatepress'),
+	]);
+});
+
 
 // Gallery
 

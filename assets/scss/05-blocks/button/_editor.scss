@@ -42,8 +42,8 @@ input[type='reset'],
 }
 
 /**
-  * Block Options
-  */
+	* Block Options
+	*/
 .wp-block-button {
 	// Target the default and filled button states.
 	&:not(.is-style-outline) {
@@ -182,7 +182,22 @@ input[type='reset'],
 		padding: 0px;
 
 		&::after {
-			content: url('../icons/chevron-down.svg');
+			display: inline-block;
+			transform: rotate(270deg);
+			position: relative;
+			top: 0.2em;
+			background-color: currentColor;
+			content: '';
+			-webkit-mask: url('../icons/chevron-down.svg') no-repeat 50% 50%;
+			mask: url('../icons/chevron-down.svg') no-repeat 50% 50%;
+			-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+			-webkit-mask-position: center;
+			mask-position: center;
+			clip-path: padding-box inset(0.28125em 0);
+			height: 1em;
+			width: 1em;
+			margin-right: -0.3em;
 		}
 
 		&:active {
@@ -192,9 +207,7 @@ input[type='reset'],
 		&:hover {
 			background-color: transparent;
 			color: var(--button-primary-background-color);
-
-			&::after {
-			}
+			border-bottom: 1px solid var(--button-primary-background-color-hover);
 		}
 	}
 
@@ -204,6 +217,24 @@ input[type='reset'],
 		border-bottom: 1px solid var(--button-secondary-background-color);
 		border-radius: 0px;
 		padding: 0px;
+		&::after {
+			display: inline-block;
+			transform: rotate(270deg);
+			position: relative;
+			top: 0.2em;
+			background-color: currentColor;
+			content: '';
+			-webkit-mask: url('../icons/chevron-down.svg') no-repeat 50% 50%;
+			mask: url('../icons/chevron-down.svg') no-repeat 50% 50%;
+			-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+			-webkit-mask-position: center;
+			mask-position: center;
+			clip-path: padding-box inset(0.28125em 0);
+			height: 1em;
+			width: 1em;
+			margin-right: -0.3em;
+		}
 
 		&:active {
 			background-color: transparent;
@@ -211,7 +242,7 @@ input[type='reset'],
 
 		&:hover {
 			background-color: transparent;
-			color: var(--button-secondary-background-color);
+			border-bottom: 1px solid var(--button-secondary-background-color-hover);
 		}
 	}
 

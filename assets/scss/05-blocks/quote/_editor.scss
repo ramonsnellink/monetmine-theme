@@ -1,18 +1,24 @@
 .wp-block-quote {
 	&.is-style-quotation-marks {
-		border: none !important;
+		border: none;
 		padding: 0;
 		margin: 0.5em 0;
 
 		& p {
-			font-size: 1.2em;
+			font-size: 1.1em;
 			font-weight: 700;
-			line-height: 1.4;
+			line-height: 1.3;
 			margin-bottom: 0.2em;
 			font-style: normal;
 
+			@media screen and (min-width: 1024px) {
+				font-size: 1.4em;
+				line-height: 1.2;
+			}
+
 			&::before {
 				content: '“';
+				color: inherit;
 			}
 
 			&::after {
@@ -21,12 +27,13 @@
 
 			&::before,
 			&::after {
+				font-family: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
 			}
 		}
 
 		& cite {
 			font-style: normal;
-			font-size: 0.8em !important;
+			font-size: 0.8em;
 			&::before {
 				content: '- ';
 			}
@@ -34,12 +41,70 @@
 	}
 }
 
-@media screen and (min-width: 1024px) {
-	.wp-block-quote {
-		&.is-style-quotation-marks {
-			& p {
-				font-size: 1.4em !important;
-				line-height: 1.6 !important;
+.add-quote-marks {
+	position: relative;
+	&::before {
+		top: -35px;
+		content: '“';
+	}
+
+	&::after {
+		content: '”';
+		// bottom: 0;
+		bottom: 0px;
+		top: calc(100% - 40px);
+	}
+
+	&::before,
+	&::after {
+		font-family: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+		position: absolute;
+		font-size: 10rem;
+		line-height: 1;
+		margin: 0;
+		padding: 0;
+		left: calc(50% - 1.5rem);
+		color: var(--color-gray-200);
+	}
+}
+
+// Quote with background image
+.quote-image {
+	.gb-inside-container {
+		position: relative;
+		display: flex;
+		justify-content: center;
+
+		.gb-container {
+			position: absolute;
+			bottom: 0;
+		}
+	}
+
+	// Max height image in quote
+	.quote-max-height {
+		width: 100%;
+		margin-bottom: 0px;
+
+		&:after {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			display: inline-block;
+			background: linear-gradient(
+				to bottom,
+				rgba(0, 0, 0, 0) 40%,
+				rgba(0, 0, 0, 0.4) 70%
+			); /* W3C */
+		}
+		img {
+			height: 90vh;
+
+			@media screen and (min-width: 768px) {
+				max-height: 800px;
 			}
 		}
 	}

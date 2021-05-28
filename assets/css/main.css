@@ -150,12 +150,12 @@ h6 {
 }
 
 h1 {
-  font-size: 1.4em;
+  font-size: 1.6em;
   line-height: 1.1111111;
 }
 
 h2 {
-  font-size: 1.3em;
+  font-size: 1.5em;
   line-height: 1.3333333;
 }
 
@@ -233,9 +233,18 @@ input[type=reset],
   text-align: center;
   padding: var(--button--padding-vertical) var(--button--padding-horizontal);
   font-weight: var(--font-weight-bold);
-  font-size: 0.8em;
+  font-size: 0.9em;
   text-transform: lowercase;
   text-decoration: none;
+}
+@media screen and (min-width: 1024px) {
+  .site .button,
+input[type=submit],
+input[type=reset],
+.wp-block-search__button,
+.wp-block-button .wp-block-button__link {
+    font-size: 0.8em;
+  }
 }
 .site .button:not(.has-background),
 input[type=submit]:not(.has-background),
@@ -280,8 +289,8 @@ input[type=reset]:hover,
 }
 
 /**
-   * Block Options
-   */
+	 * Block Options
+	 */
 .wp-block-button:not(.is-style-outline) .wp-block-button__link:active {
   color: var(--button-text-color-hover);
   background-color: var(--button-background-color-hover);
@@ -371,11 +380,22 @@ input[type=reset]:hover,
   padding: 0px;
 }
 .wp-block-button.is-style-button-underline-primary .wp-block-button__link:not(.has-background)::after {
-  content: url("../icons/chevron-down.svg");
   display: inline-block;
   transform: rotate(270deg);
-  margin-left: 2px;
-  margin-right: -6px;
+  position: relative;
+  top: 0.2em;
+  background-color: currentColor;
+  content: "";
+  -webkit-mask: url("../icons/chevron-down.svg") no-repeat 50% 50%;
+  mask: url("../icons/chevron-down.svg") no-repeat 50% 50%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  clip-path: padding-box inset(0.28125em 0);
+  height: 1em;
+  width: 1em;
+  margin-right: -0.3em;
 }
 .wp-block-button.is-style-button-underline-primary .wp-block-button__link:not(.has-background):active {
   background-color: transparent;
@@ -383,6 +403,7 @@ input[type=reset]:hover,
 .wp-block-button.is-style-button-underline-primary .wp-block-button__link:not(.has-background):hover {
   background-color: transparent;
   color: var(--button-primary-background-color);
+  border-bottom: 1px solid var(--button-primary-background-color-hover);
 }
 .wp-block-button.is-style-button-underline-secondary .wp-block-button__link:not(.has-background) {
   background-color: transparent;
@@ -391,18 +412,29 @@ input[type=reset]:hover,
   padding: 0px;
 }
 .wp-block-button.is-style-button-underline-secondary .wp-block-button__link:not(.has-background)::after {
-  content: url("../icons/chevron-down.svg");
   display: inline-block;
   transform: rotate(270deg);
-  margin-left: 2px;
-  margin-right: -6px;
+  position: relative;
+  top: 0.2em;
+  background-color: currentColor;
+  content: "";
+  -webkit-mask: url("../icons/chevron-down.svg") no-repeat 50% 50%;
+  mask: url("../icons/chevron-down.svg") no-repeat 50% 50%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  clip-path: padding-box inset(0.28125em 0);
+  height: 1em;
+  width: 1em;
+  margin-right: -0.3em;
 }
 .wp-block-button.is-style-button-underline-secondary .wp-block-button__link:not(.has-background):active {
   background-color: transparent;
 }
 .wp-block-button.is-style-button-underline-secondary .wp-block-button__link:not(.has-background):hover {
   background-color: transparent;
-  color: var(--button-secondary-background-color);
+  border-bottom: 1px solid var(--button-secondary-background-color-hover);
 }
 .wp-block-button .is-style-squared .wp-block-button__link {
   border-radius: 0;
@@ -421,21 +453,9 @@ input[type=reset]:hover,
   width: 100%;
 }
 
-.gb-button.arrow-after {
-  position: relative;
-  display: inline-block;
-}
-.gb-button.arrow-after::after {
-  content: "→";
-  position: absolute;
-  padding-left: 2px;
-  opacity: 0;
-  transition: padding-left 0.2s ease-in-out, opacity 0.2s ease-in-out;
-}
-.gb-button.arrow-after:hover::after {
-  content: "→";
-  opacity: 1;
-  padding-left: 7px;
+.wp-block-buttons > .wp-block-button {
+  margin-right: 1em;
+  margin-bottom: 1em;
 }
 
 .wp-block-gallery,
@@ -501,6 +521,7 @@ input[type=reset]:hover,
 }
 .wp-block-image.is-style-image-cover img {
   height: 100%;
+  width: 100%;
   object-fit: cover;
 }
 
@@ -607,14 +628,21 @@ input[type=reset]:hover,
   margin: 0.5em 0;
 }
 .wp-block-quote.is-style-quotation-marks p {
-  font-size: 1.2em;
+  font-size: 1.1em;
   font-weight: 700;
-  line-height: 1.4;
+  line-height: 1.3;
   margin-bottom: 0.2em;
   font-style: normal;
 }
+@media screen and (min-width: 1024px) {
+  .wp-block-quote.is-style-quotation-marks p {
+    font-size: 1.4em;
+    line-height: 1.2;
+  }
+}
 .wp-block-quote.is-style-quotation-marks p::before {
   content: "“";
+  color: inherit;
 }
 .wp-block-quote.is-style-quotation-marks p::after {
   content: "”";
@@ -630,12 +658,6 @@ input[type=reset]:hover,
   content: "- ";
 }
 
-@media screen and (min-width: 1024px) {
-  .wp-block-quote.is-style-quotation-marks p {
-    font-size: 1.4em;
-    line-height: 1.6;
-  }
-}
 .add-quote-marks {
   position: relative;
 }
@@ -657,6 +679,38 @@ input[type=reset]:hover,
   padding: 0;
   left: calc(50% - 1.5rem);
   color: var(--color-gray-200);
+}
+
+.quote-image .gb-inside-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.quote-image .gb-inside-container .gb-container {
+  position: absolute;
+  bottom: 0;
+}
+.quote-image .quote-max-height {
+  width: 100%;
+  margin-bottom: 0px;
+}
+.quote-image .quote-max-height:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.4) 70%);
+}
+.quote-image .quote-max-height img {
+  height: 90vh;
+}
+@media screen and (min-width: 768px) {
+  .quote-image .quote-max-height img {
+    max-height: 800px;
+  }
 }
 
 hr {
@@ -946,7 +1000,7 @@ hr .wp-block-separator.is-style-wide {
   font-size: 1.8em;
 }
 .page-hero-title.post-hero-title {
-  font-size: 1.4em;
+  font-size: 1.6em;
 }
 .page-hero-back {
   align-self: flex-start;
@@ -1332,6 +1386,34 @@ body.page-id-11 #page {
     left: 0;
   }
 }
+.homepage-hero {
+  position: relative;
+}
+.homepage-hero > .gb-inside-container,
+.homepage-hero > .gb-inside-container .block-editor-block-list__block {
+  display: flex;
+  justify-content: center;
+}
+.homepage-hero-content {
+  position: absolute;
+  bottom: 15%;
+}
+.homepage-hero-image {
+  width: 100%;
+}
+.homepage-hero-image img {
+  object-fit: cover;
+  object-position: 90% 100%;
+  width: 100%;
+  height: 90vh;
+}
+@media screen and (min-width: 1024px) {
+  .homepage-hero-image img {
+    object-position: top right;
+    height: 850px;
+  }
+}
+
 .metaslider.ms-theme-radix .flexslider ol.flex-control-nav:not(.flex-control-thumbs) li a,
 .metaslider.ms-theme-radix ul.rslides_tabs li a,
 .metaslider.ms-theme-radix div.slider-wrapper .nivo-controlNav:not(.nivo-thumbs-enabled) a,
@@ -1402,6 +1484,29 @@ body.page-id-11 #page {
 
 .underline {
   text-decoration: underline;
+}
+
+.no-underline {
+  text-decoration: none;
+}
+.no-underline a {
+  text-decoration: none !important;
+}
+
+.max-w-left .gb-grid-column:first-child {
+  display: flex;
+  justify-content: flex-end;
+}
+.max-w-left .gb-grid-column:first-child .gb-container {
+  max-width: 755px;
+}
+
+.max-w-right .gb-grid-column:nth-child(2) {
+  display: flex;
+  justify-content: flex-start;
+}
+.max-w-right .gb-grid-column:nth-child(2) .gb-container {
+  max-width: 755px;
 }
 
 /*# sourceMappingURL=main.css.map */

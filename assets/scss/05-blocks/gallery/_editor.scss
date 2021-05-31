@@ -1,5 +1,6 @@
 .wp-block-gallery,
-.wp-block-gallery.columns-3 {
+.wp-block-gallery.columns-3,
+.wp-block-gallery.columns-4 {
 	margin: 0 auto;
 
 	.blocks-gallery-image,
@@ -15,7 +16,6 @@
 		}
 
 		a:focus img {
-			// outline-offset: 2px;
 		}
 	}
 }
@@ -25,7 +25,6 @@
 	& .blocks-gallery-grid {
 		display: grid;
 		grid-template-columns: 1fr;
-		// grid-template-rows: repeat(2, 1fr);
 		gap: 5px;
 	}
 
@@ -34,32 +33,71 @@
 	}
 }
 
-.wp-block-gallery.is-style-gallery-scroll {
-	// flex-wrap: nowrap;
+// 1 Large portrait to the left and 2 small landscape
 
+.wp-block-gallery.is-style-gallery-1lg-portrait-left-2sm {
 	& .blocks-gallery-grid {
-		flex-wrap: nowrap;
-		overflow-x: scroll;
+		display: grid;
+
+		grid-template-areas:
+			'portrait landscape1'
+			'portrait landscape2';
+		width: 100%;
 	}
 
 	& .blocks-gallery-item {
-		width: 400px;
+		width: initial;
+
+		img {
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+		}
+		&:nth-child(1) {
+			grid-area: portrait;
+		}
+
+		&:nth-child(2) {
+			grid-area: landscape1;
+		}
+
+		&:nth-child(3) {
+			grid-area: landscape2;
+		}
+	}
+}
+
+// Custom Gallery, overflow horizontal scroll
+.wp-block-gallery.is-style-gallery-scroll {
+	& .blocks-gallery-grid {
+		flex-wrap: nowrap;
+		overflow-x: scroll;
+
+		@media screen and (min-width: 1024px) {
+			overflow-x: hidden;
+		}
+	}
+
+	& .blocks-gallery-item {
+		width: 350px;
 		margin-right: 5px;
 
-		&:nth-of-type(4n) {
-			margin-right: 5px;
+		@media screen and (min-width: 1024px) {
+			width: initial;
 		}
 
 		& figure {
-			width: 400px;
+			width: 350px;
+
+			@media screen and (min-width: 1024px) {
+				width: initial;
+			}
 		}
 
 		& img {
 		}
 	}
 }
-
-// Custom Gallery Layout. Full width with overflow scroll
 
 @media screen and (min-width: 768px) {
 	// Custom Gallery Lay-out. 1 large with 2 small images to the side
@@ -68,6 +106,7 @@
 			display: grid;
 			grid-template-columns: 2fr 1fr;
 			grid-template-rows: repeat(2, 1fr);
+			width: 100%;
 		}
 
 		& .blocks-gallery-item {
@@ -84,6 +123,4 @@
 			}
 		}
 	}
-
-	// Custom Gallery Layout. Full width with overflow scroll
 }

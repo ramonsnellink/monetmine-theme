@@ -47,7 +47,14 @@ add_action('init', function() {
 add_action('init', function() {
 	register_block_style('core/gallery', [
 		'name' => 'gallery-1lg-2sm',
-		'label' => __('Gallery with 1 large image and 2 to the side', 'generatepress'),
+		'label' => __('1 large landscape image and 2 landscape to the side', 'generatepress'),
+	]);
+});
+
+add_action('init', function() {
+	register_block_style('core/gallery', [
+		'name' => 'gallery-1lg-portrait-left-2sm',
+		'label' => __('1 large portrait image left and 2 landscape to the side', 'generatepress'),
 	]);
 });
 

@@ -50,6 +50,11 @@
 
 			transition: transform 0.5s ease-in-out;
 		}
+
+		@media screen and (min-width: 1024px) {
+			max-width: 100%;
+			margin-bottom: 0px;
+		}
 	}
 
 	.entry-title {
@@ -102,37 +107,4 @@
 	margin: 0px auto;
 	padding: 20px 0px;
 	text-align: left;
-}
-
-// Tablet+
-@media only screen and (min-width: 1024px) {
-	.archive .post,
-	.archive .page,
-	.blog .post,
-	.blog .page,
-	.search .post,
-	.search .page {
-		.inside-article {
-			.entry-header {
-			}
-			.entry-content,
-			.entry-summary {
-			}
-			.post-image {
-				max-width: 100%;
-				margin-bottom: 0px;
-			}
-		}
-	}
-}
-
-@media only screen and (min-width: 1280px) {
-	.archive .post,
-	.blog .post,
-	.search .post {
-		.inside-article {
-			.entry-header {
-			}
-		}
-	}
 }

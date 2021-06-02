@@ -379,19 +379,12 @@ input[type=reset]:hover,
   display: inline-block;
   transform: rotate(270deg);
   position: relative;
-  top: 0.2em;
-  background-color: currentColor;
-  content: "";
-  -webkit-mask: url("../icons/chevron-down.svg") no-repeat 50% 50%;
-  mask: url("../icons/chevron-down.svg") no-repeat 50% 50%;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  mask-position: center;
-  clip-path: padding-box inset(0.28125em 0);
-  height: 1em;
-  width: 1em;
+  left: 0px;
+  top: 0.1em;
+  content: url("../icons/chevron-down-link.svg");
   margin-right: -0.3em;
+  margin-left: 0.2em;
+  transition: all 0.1s ease-in-out;
 }
 .wp-block-button.is-style-button-underline-primary .wp-block-button__link:not(.has-background):active {
   background-color: transparent;
@@ -399,6 +392,9 @@ input[type=reset]:hover,
 .wp-block-button.is-style-button-underline-primary .wp-block-button__link:not(.has-background):hover {
   background-color: transparent;
   border-bottom: 1px solid var(--button-primary-background-color-hover);
+}
+.wp-block-button.is-style-button-underline-primary .wp-block-button__link:not(.has-background):hover::after {
+  left: 2px;
 }
 .wp-block-button.is-style-button-underline-secondary .wp-block-button__link:not(.has-background) {
   background-color: transparent;
@@ -410,19 +406,12 @@ input[type=reset]:hover,
   display: inline-block;
   transform: rotate(270deg);
   position: relative;
-  top: 0.2em;
-  background-color: currentColor;
-  content: "";
-  -webkit-mask: url("../icons/chevron-down.svg") no-repeat 50% 50%;
-  mask: url("../icons/chevron-down.svg") no-repeat 50% 50%;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  mask-position: center;
-  clip-path: padding-box inset(0.28125em 0);
-  height: 1em;
-  width: 1em;
+  left: 0px;
+  top: 0.1em;
+  content: url("../icons/chevron-down-link.svg");
   margin-right: -0.3em;
+  margin-left: 0.2em;
+  transition: all 0.1s ease-in-out;
 }
 .wp-block-button.is-style-button-underline-secondary .wp-block-button__link:not(.has-background):active {
   background-color: transparent;
@@ -430,6 +419,9 @@ input[type=reset]:hover,
 .wp-block-button.is-style-button-underline-secondary .wp-block-button__link:not(.has-background):hover {
   background-color: transparent;
   border-bottom: 1px solid var(--button-secondary-background-color-hover);
+}
+.wp-block-button.is-style-button-underline-secondary .wp-block-button__link:not(.has-background):hover::after {
+  left: 2px;
 }
 .wp-block-button .is-style-squared .wp-block-button__link {
   border-radius: 0;
@@ -646,15 +638,7 @@ input[type=reset]:hover,
   position: relative;
   top: 0.2em;
   left: 0px;
-  background-color: currentColor;
-  content: "";
-  -webkit-mask: url("../icons/chevron-down.svg") no-repeat 50% 50%;
-  mask: url("../icons/chevron-down.svg") no-repeat 50% 50%;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  mask-position: center;
-  clip-path: padding-box inset(0.28125em 0);
+  content: url("../icons/chevron-down-white.svg");
   height: 30px;
   width: 30px;
   margin-left: auto;
@@ -1195,19 +1179,16 @@ body.page-id-11 #page {
   color: var(--button-text-color);
   cursor: pointer;
   background-color: var(--button-background-color);
-  -webkit-border-radius: var(--button--border-radius);
-  -moz-border-radius: var(--button--border-radius);
-  border-radius: var(--button--border-radius);
   text-align: center;
   padding: var(--button--padding-vertical);
   font-weight: var(--font-weight-bold);
-  font-size: 0.9em;
+  font-size: 0.8em;
   text-transform: lowercase;
   text-decoration: none;
 }
 .paging-navigation .nav-links .page-numbers:hover {
   background-color: var(--button-background-color-hover);
-  color: var(--button-text-color-hover);
+  color: white;
 }
 
 .archive .page-header,

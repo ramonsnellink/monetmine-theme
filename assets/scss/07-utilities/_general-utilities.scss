@@ -50,6 +50,9 @@
 	}
 }
 
+.max-w {
+	max-width: 755px;
+}
 // Contained left or right element in full width grid.
 .max-w-left {
 	.gb-grid-column:first-child {
@@ -69,6 +72,24 @@
 
 		.gb-container {
 			max-width: 755px;
+		}
+	}
+}
+
+.overflow-grid {
+	overflow-x: scroll;
+	flex-wrap: nowrap;
+
+	@media screen and (min-width: 1024px) {
+		overflow: hidden;
+		flex-wrap: wrap;
+	}
+
+	.gb-grid-column > .gb-container {
+		width: 350px;
+
+		@media screen and (min-width: 1024px) {
+			width: initial;
 		}
 	}
 }

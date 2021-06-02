@@ -34,7 +34,12 @@
 
 			&:after {
 				content: url('../icons/chevron-down.svg');
-				margin-left: 3px;
+				height: 0.6em;
+				width: 0.6em;
+				margin-left: 6px;
+				position: relative;
+				display: inline-block;
+				top: 0.2em;
 			}
 		}
 		&:first-child {

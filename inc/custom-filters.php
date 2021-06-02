@@ -56,7 +56,7 @@ add_action( 'generate_after_entry_title', function() {
     $cat = get_the_category();
     if ( isset( $cat[0]->name ) && is_single() ) {
         $category_link = get_category_link(  $cat[0]->cat_ID );
-         echo '<div class="entry-category"><a class="entry-category-link" href="' . esc_url($category_link) . '">'. $cat[0]->name . '</a></div>';
+         echo '<div class="entry-category"><a class="entry-category-link " href="' . esc_url($category_link) . '">'. $cat[0]->name . '</a></div>';
 
     }
 } );
@@ -117,3 +117,10 @@ function hide_categories_terms($terms){
     // return default terms JIC the above case is not met
     return $terms;
 }
+
+
+// Remove LW Accordion styling
+
+add_filter('lightweight_accordion_include_frontend_stylesheet', '__return_false' );
+
+

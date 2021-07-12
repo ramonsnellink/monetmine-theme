@@ -1,0 +1,102 @@
+.pricing-table {
+	&__package {
+		ul {
+			list-style: none;
+		}
+
+		ul li::before {
+			content: '\2022';
+			color: var(--color-primary);
+			font-weight: bold;
+			display: inline-block;
+			width: 1em;
+			margin-left: -1em;
+		}
+
+		.gb-inside-container {
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+
+			.pricing-table__button-container {
+				margin-top: auto;
+			}
+		}
+	}
+
+	.kt-tab-inner-content-inner {
+	}
+
+	.kt-tabs-title-list {
+		margin-bottom: 60px;
+
+		li {
+			position: relative;
+		}
+	}
+
+	#tab-1fotograaf {
+		span {
+			z-index: 2;
+		}
+		&::before {
+			content: '';
+			border: 1px solid var(--color-gray-300);
+			border-top-left-radius: 9999px;
+			border-bottom-left-radius: 9999px;
+			border-right: 0px;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			z-index: 1;
+			// transform: scale(1.23) translateX(6%);
+		}
+	}
+
+	#tab-2fotografen {
+		span {
+			z-index: 2;
+		}
+
+		&::before {
+			content: '';
+			border: 1px solid var(--color-gray-300);
+			border-top-right-radius: 9999px;
+			border-bottom-right-radius: 9999px;
+			border-left: 0px;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			position: absolute;
+			z-index: 1;
+			// transform: scale(1.23) translateX(-6%);
+		}
+	}
+}
+
+.overflow-grid-pricing {
+	overflow-x: scroll;
+	flex-wrap: nowrap;
+
+	> * {
+		width: 100% !important;
+
+		@media screen and (min-width: 1280px) {
+			width: 25% !important;
+		}
+	}
+
+	@media screen and (min-width: 1280px) {
+		overflow: hidden;
+		flex-wrap: wrap;
+	}
+
+	.gb-grid-column > .gb-container {
+		width: 350px;
+
+		@media screen and (min-width: 1280px) {
+			width: initial;
+		}
+	}
+}

@@ -17,7 +17,7 @@
 	&.is-grid {
 		overflow-x: scroll;
 		display: grid;
-		grid-template-columns: repeat(4, 1fr);
+		grid-template-columns: repeat(8, 1fr);
 		gap: 5px;
 
 		@media screen and (min-width: 1024px) {
@@ -113,10 +113,11 @@
 			}
 
 			&::after {
-				display: inline-block;
+				display: inline-flex;
+				justify-content: flex-end;
 				transform: rotate(270deg);
 				position: relative;
-				top: 0.2em;
+				/* bottom: 0.2em; */
 				left: 0px;
 				content: url('../icons/chevron-down-white.svg');
 				height: 30px;

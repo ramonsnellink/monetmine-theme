@@ -1,0 +1,29 @@
+.wp-block-pullquote {
+	
+padding: 0;
+	&.is-style-primary-pullquote {
+		margin: 0px;
+
+		max-width: initial;
+
+		p {
+			display: none;
+		}
+		
+		blockquote {
+			border: 1px solid rgba(76, 131, 131, 0.13);
+			background-color: var(--color-primary-light);
+			font-size: 0.9em;
+			color: var(--color-primary);
+			text-align: left;
+		}
+
+		cite {
+			font-style: normal;
+
+			
+		}
+	
+	}
+
+}

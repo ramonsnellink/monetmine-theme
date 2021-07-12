@@ -59,7 +59,6 @@ hr {
 ol,
 ul {
 	margin: 0 0 1.5em 2em;
-	list-style-type: square;
 }
 
 form.fluent_form_1 .wpf_has_custom_css.ff-btn-submit {
@@ -67,6 +66,11 @@ form.fluent_form_1 .wpf_has_custom_css.ff-btn-submit {
 	padding: var(--button--padding-vertical) var(--button--padding-horizontal);
 	font-weight: var(--font-weight-bold);
 	font-size: 0.9em;
+	box-shadow: 0px 1px 8px 0px rgb(0 0 0 / 10%);
+
+	&:hover {
+		box-shadow: none;
+	}
 }
 
 .fluentform .ff-btn:hover {

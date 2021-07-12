@@ -3,7 +3,11 @@
 
 .page-hero {
 	background-color: var(--color-gray-100);
-	margin-bottom: $block-margin;
+	margin-bottom: 40px;
+
+	@media screen and (min-width: 1024px) {
+		 margin-bottom: 80px;
+	}
 
 	&-thumbnail {
 		width: 100%;

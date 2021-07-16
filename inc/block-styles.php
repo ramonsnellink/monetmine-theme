@@ -74,11 +74,19 @@ add_action('init', function() {
 	]);
 });
 
-// Block Quotes
+//  Quotes
 
 add_action('init', function() {
 	register_block_style('core/quote', [
 		'name' => 'quotation-marks',
 		'label' => __('Quote with Quotation marks', 'generatepress'),
+	]);
+});
+
+
+add_action('init', function() {
+	register_block_style('core/pullquote', [
+		'name' => 'primary-pullquote',
+		'label' => __('Primary color pullquote', 'generatepress'),
 	]);
 });

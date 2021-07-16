@@ -18,11 +18,6 @@ function cat_dropdown( ){
 	wp_enqueue_script( 'category_dropdown', get_stylesheet_directory_uri() . '/assets/js/category_dropdown.js', array(), false, true);
 
 
-    // if(!is_page([7,28])){
-    //     wp_dequeue_script( 'jquery');
-    //     wp_deregister_script( 'jquery');   
-    // } 
-
 	if(is_single() || is_page() || is_search()) {
 		wp_dequeue_script( 'category_dropdown');
 		 wp_deregister_script( 'category_dropdown');   

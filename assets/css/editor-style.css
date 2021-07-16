@@ -202,6 +202,7 @@ input[type=reset]:hover,
 .wp-block-button.is-style-button-primary .wp-block-button__link:not(.has-background) {
   color: var(--button-primary-text-color);
   background-color: var(--button-primary-background-color);
+  box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.1);
 }
 .wp-block-button.is-style-button-primary .wp-block-button__link:not(.has-background):active {
   color: var(--button-primary-text-color-hover);
@@ -210,10 +211,12 @@ input[type=reset]:hover,
 .wp-block-button.is-style-button-primary .wp-block-button__link:not(.has-background):hover {
   color: var(--button-primary-text-color-hover);
   background-color: var(--button-primary-background-color-hover);
+  box-shadow: none;
 }
 .wp-block-button.is-style-button-secondary .wp-block-button__link:not(.has-background) {
   color: var(--button-secondary-text-color);
   background-color: var(--button-secondary-background-color);
+  box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.1);
 }
 .wp-block-button.is-style-button-secondary .wp-block-button__link:not(.has-background):active {
   color: var(--button-secondary-text-color-hover);
@@ -222,6 +225,7 @@ input[type=reset]:hover,
 .wp-block-button.is-style-button-secondary .wp-block-button__link:not(.has-background):hover {
   color: var(--button-secondary-text-color-hover);
   background-color: var(--button-secondary-background-color-hover);
+  box-shadow: none;
 }
 .wp-block-button.is-style-button-light .wp-block-button__link:not(.has-background) {
   background-color: var(--color-gray-100);
@@ -242,21 +246,17 @@ input[type=reset]:hover,
   display: inline-block;
   transform: rotate(270deg);
   position: relative;
-  top: 0.2em;
   left: 0px;
-  background-color: currentColor;
+  top: 4px;
   content: "";
-  -webkit-mask: url("../icons/chevron-down.svg") no-repeat 50% 50%;
-  mask: url("../icons/chevron-down.svg") no-repeat 50% 50%;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  mask-position: center;
-  clip-path: padding-box inset(0.28125em 0);
   height: 1em;
   width: 1em;
+  background-size: 1em 1em;
+  background-image: url("../icons/chevron-down-link.svg");
+  background-repeat: no-repeat;
   margin-right: -0.3em;
-  transition: all ease-in-out 0.2s;
+  margin-left: 0.2em;
+  transition: all 0.1s ease-in-out;
 }
 .wp-block-button.is-style-button-underline-primary .wp-block-button__link:not(.has-background):active {
   background-color: transparent;
@@ -278,21 +278,17 @@ input[type=reset]:hover,
   display: inline-block;
   transform: rotate(270deg);
   position: relative;
-  top: 0.2em;
-  left: 0;
-  background-color: currentColor;
+  left: 0px;
+  top: 4px;
   content: "";
-  -webkit-mask: url("../icons/chevron-down.svg") no-repeat 50% 50%;
-  mask: url("../icons/chevron-down.svg") no-repeat 50% 50%;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  mask-position: center;
-  clip-path: padding-box inset(0.28125em 0);
   height: 1em;
   width: 1em;
+  background-size: 1em 1em;
+  background-image: url("../icons/chevron-down-link.svg");
+  background-repeat: no-repeat;
   margin-right: -0.3em;
-  transition: all ease-in-out 0.2s;
+  margin-left: 0.2em;
+  transition: all 0.1s ease-in-out;
 }
 .wp-block-button.is-style-button-underline-secondary .wp-block-button__link:not(.has-background):active {
   background-color: transparent;
@@ -303,6 +299,10 @@ input[type=reset]:hover,
 }
 .wp-block-button.is-style-button-underline-secondary .wp-block-button__link:not(.has-background):hover::after {
   left: 2px;
+}
+.wp-block-button.white-arrow .wp-block-button__link:not(.has-background)::after {
+  background-image: url("../icons/chevron-down-white.svg");
+  top: 3px;
 }
 .wp-block-button .is-style-squared .wp-block-button__link {
   border-radius: 0;
@@ -420,6 +420,7 @@ input[type=reset]:hover,
 }
 .wp-block-image.is-style-image-cover img {
   height: 100%;
+  width: 100%;
   object-fit: cover;
 }
 
@@ -513,10 +514,11 @@ input[type=reset]:hover,
   left: 3px;
 }
 .wp-block-latest-posts > li > *:last-child::after {
-  display: inline-block;
+  display: inline-flex;
+  justify-content: flex-end;
   transform: rotate(270deg);
   position: relative;
-  top: 0.2em;
+  /* bottom: 0.2em; */
   left: 0px;
   content: url("../icons/chevron-down-white.svg");
   height: 30px;
@@ -534,6 +536,28 @@ input[type=reset]:hover,
 .entry-content [class*=inner-container] .wp-block-latest-posts.alignfull, .entry-content .has-background .wp-block-latest-posts.alignfull {
   padding-left: 0;
   padding-right: 0;
+}
+
+.wp-block-pullquote {
+  padding: 0;
+}
+.wp-block-pullquote.is-style-primary-pullquote {
+  margin: 0px;
+  max-width: initial;
+}
+.wp-block-pullquote.is-style-primary-pullquote p {
+  display: none;
+}
+.wp-block-pullquote.is-style-primary-pullquote blockquote {
+  border: 1px solid rgba(76, 131, 131, 0.13);
+  background-color: var(--color-primary-light);
+  font-size: 0.9em;
+  color: var(--color-primary);
+  text-align: left;
+  text-transform: initial !important;
+}
+.wp-block-pullquote.is-style-primary-pullquote cite {
+  font-style: normal;
 }
 
 .wp-block-quote.is-style-quotation-marks {
@@ -938,7 +962,7 @@ a {
 }
 
 .shadow-sm {
-  box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.05);
 }
 
 .shadow-md {
@@ -976,16 +1000,20 @@ a {
   display: flex;
   justify-content: flex-end;
 }
-.max-w-left .gb-grid-column:first-child .gb-container {
-  max-width: 755px;
+@media screen and (min-width: 1024px) {
+  .max-w-left .gb-grid-column:first-child .gb-container {
+    max-width: 755px;
+  }
 }
 
 .max-w-right .gb-grid-column:nth-child(2) {
   display: flex;
   justify-content: flex-start;
 }
-.max-w-right .gb-grid-column:nth-child(2) .gb-container {
-  max-width: 755px;
+@media screen and (min-width: 1024px) {
+  .max-w-right .gb-grid-column:nth-child(2) .gb-container {
+    max-width: 755px;
+  }
 }
 
 .overflow-grid {

@@ -117,7 +117,6 @@ hr {
 ol,
 ul {
   margin: 0 0 1.5em 2em;
-  list-style-type: square;
 }
 
 form.fluent_form_1 .wpf_has_custom_css.ff-btn-submit {
@@ -125,6 +124,10 @@ form.fluent_form_1 .wpf_has_custom_css.ff-btn-submit {
   padding: var(--button--padding-vertical) var(--button--padding-horizontal);
   font-weight: var(--font-weight-bold);
   font-size: 0.9em;
+  box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.1);
+}
+form.fluent_form_1 .wpf_has_custom_css.ff-btn-submit:hover {
+  box-shadow: none;
 }
 
 .fluentform .ff-btn:hover {
@@ -339,6 +342,7 @@ input[type=reset]:hover,
 .wp-block-button.is-style-button-primary .wp-block-button__link:not(.has-background) {
   color: var(--button-primary-text-color);
   background-color: var(--button-primary-background-color);
+  box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.1);
 }
 .wp-block-button.is-style-button-primary .wp-block-button__link:not(.has-background):active {
   color: var(--button-primary-text-color-hover);
@@ -347,10 +351,12 @@ input[type=reset]:hover,
 .wp-block-button.is-style-button-primary .wp-block-button__link:not(.has-background):hover {
   color: var(--button-primary-text-color-hover);
   background-color: var(--button-primary-background-color-hover);
+  box-shadow: none;
 }
 .wp-block-button.is-style-button-secondary .wp-block-button__link:not(.has-background) {
   color: var(--button-secondary-text-color);
   background-color: var(--button-secondary-background-color);
+  box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.1);
 }
 .wp-block-button.is-style-button-secondary .wp-block-button__link:not(.has-background):active {
   color: var(--button-secondary-text-color-hover);
@@ -359,6 +365,7 @@ input[type=reset]:hover,
 .wp-block-button.is-style-button-secondary .wp-block-button__link:not(.has-background):hover {
   color: var(--button-secondary-text-color-hover);
   background-color: var(--button-secondary-background-color-hover);
+  box-shadow: none;
 }
 .wp-block-button.is-style-button-light .wp-block-button__link:not(.has-background) {
   background-color: var(--color-gray-100);
@@ -380,8 +387,13 @@ input[type=reset]:hover,
   transform: rotate(270deg);
   position: relative;
   left: 0px;
-  top: 0.1em;
-  content: url("../icons/chevron-down-link.svg");
+  top: 4px;
+  content: "";
+  height: 1em;
+  width: 1em;
+  background-size: 1em 1em;
+  background-image: url("../icons/chevron-down-link.svg");
+  background-repeat: no-repeat;
   margin-right: -0.3em;
   margin-left: 0.2em;
   transition: all 0.1s ease-in-out;
@@ -407,8 +419,13 @@ input[type=reset]:hover,
   transform: rotate(270deg);
   position: relative;
   left: 0px;
-  top: 0.1em;
-  content: url("../icons/chevron-down-link.svg");
+  top: 4px;
+  content: "";
+  height: 1em;
+  width: 1em;
+  background-size: 1em 1em;
+  background-image: url("../icons/chevron-down-link.svg");
+  background-repeat: no-repeat;
   margin-right: -0.3em;
   margin-left: 0.2em;
   transition: all 0.1s ease-in-out;
@@ -422,6 +439,10 @@ input[type=reset]:hover,
 }
 .wp-block-button.is-style-button-underline-secondary .wp-block-button__link:not(.has-background):hover::after {
   left: 2px;
+}
+.wp-block-button.white-arrow .wp-block-button__link:not(.has-background)::after {
+  background-image: url("../icons/chevron-down-white.svg");
+  top: 3px;
 }
 .wp-block-button .is-style-squared .wp-block-button__link {
   border-radius: 0;
@@ -562,7 +583,7 @@ input[type=reset]:hover,
 .wp-block-latest-posts.is-grid {
   overflow-x: scroll;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(8, 1fr);
   gap: 5px;
 }
 @media screen and (min-width: 1024px) {
@@ -633,10 +654,11 @@ input[type=reset]:hover,
   left: 3px;
 }
 .wp-block-latest-posts > li > *:last-child::after {
-  display: inline-block;
+  display: inline-flex;
+  justify-content: flex-end;
   transform: rotate(270deg);
   position: relative;
-  top: 0.2em;
+  bottom: -3px;
   left: 0px;
   content: url("../icons/chevron-down-white.svg");
   height: 30px;
@@ -654,6 +676,27 @@ input[type=reset]:hover,
 .entry-content [class*=inner-container] .wp-block-latest-posts.alignfull, .entry-content .has-background .wp-block-latest-posts.alignfull {
   padding-left: 0;
   padding-right: 0;
+}
+
+.wp-block-pullquote {
+  padding: 0;
+}
+.wp-block-pullquote.is-style-primary-pullquote {
+  margin: 0px;
+  max-width: initial;
+}
+.wp-block-pullquote.is-style-primary-pullquote p {
+  display: none;
+}
+.wp-block-pullquote.is-style-primary-pullquote blockquote {
+  border: 1px solid rgba(76, 131, 131, 0.13);
+  background-color: var(--color-primary-light);
+  font-size: 0.9em;
+  color: var(--color-primary);
+  text-align: left;
+}
+.wp-block-pullquote.is-style-primary-pullquote cite {
+  font-style: normal;
 }
 
 .wp-block-quote.is-style-quotation-marks {
@@ -740,10 +783,16 @@ input[type=reset]:hover,
 }
 .quote-image .quote-max-height img {
   height: 80vh;
+  object-position: center 50%;
 }
 @media screen and (min-width: 768px) {
   .quote-image .quote-max-height img {
     max-height: 800px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .quote-image .quote-max-height img {
+    max-height: 1000px;
   }
 }
 
@@ -806,7 +855,7 @@ hr .wp-block-separator.is-style-wide {
   position: -webkit-sticky;
   position: sticky;
   top: 2px;
-  box-shadow: 0 1.8px 5.3px rgba(0, 0, 0, 0.016);
+  box-shadow: 0 1.8px 5.3px rgba(0, 0, 0, 0.025);
 }
 
 .inside-header {
@@ -1007,7 +1056,12 @@ hr .wp-block-separator.is-style-wide {
 }
 .page-hero {
   background-color: var(--color-gray-100);
-  margin-bottom: 3rem;
+  margin-bottom: 40px;
+}
+@media screen and (min-width: 1024px) {
+  .page-hero {
+    margin-bottom: 80px;
+  }
 }
 .page-hero-thumbnail {
   width: 100%;
@@ -1493,6 +1547,89 @@ body.page-id-11 #page {
     opacity: 1;
   }
 }
+.pricing-table__package ul {
+  list-style: none;
+}
+.pricing-table__package ul li::before {
+  content: "•";
+  color: var(--color-primary);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+.pricing-table__package .gb-inside-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.pricing-table__package .gb-inside-container .pricing-table__button-container {
+  margin-top: auto;
+}
+.pricing-table .kt-tabs-title-list {
+  margin-bottom: 60px;
+}
+.pricing-table .kt-tabs-title-list li {
+  position: relative;
+}
+.pricing-table #tab-1fotograaf span {
+  z-index: 2;
+}
+.pricing-table #tab-1fotograaf::before {
+  content: "";
+  border: 1px solid var(--color-gray-300);
+  border-top-left-radius: 9999px;
+  border-bottom-left-radius: 9999px;
+  border-right: 0px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+}
+.pricing-table #tab-2fotografen span {
+  z-index: 2;
+}
+.pricing-table #tab-2fotografen::before {
+  content: "";
+  border: 1px solid var(--color-gray-300);
+  border-top-right-radius: 9999px;
+  border-bottom-right-radius: 9999px;
+  border-left: 0px;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.overflow-grid-pricing {
+  overflow-x: scroll;
+  flex-wrap: nowrap;
+}
+.overflow-grid-pricing > * {
+  width: 100% !important;
+}
+@media screen and (min-width: 1280px) {
+  .overflow-grid-pricing > * {
+    width: 25% !important;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .overflow-grid-pricing {
+    overflow: hidden;
+    flex-wrap: wrap;
+  }
+}
+.overflow-grid-pricing .gb-grid-column > .gb-container {
+  width: 350px;
+}
+@media screen and (min-width: 1280px) {
+  .overflow-grid-pricing .gb-grid-column > .gb-container {
+    width: initial;
+  }
+}
+
 .metaslider.ms-theme-radix .flexslider ol.flex-control-nav:not(.flex-control-thumbs) li a,
 .metaslider.ms-theme-radix ul.rslides_tabs li a,
 .metaslider.ms-theme-radix div.slider-wrapper .nivo-controlNav:not(.nivo-thumbs-enabled) a,
@@ -1542,7 +1679,7 @@ body.page-id-11 #page {
 }
 
 .shadow-sm {
-  box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.05);
 }
 
 .shadow-md {
@@ -1580,16 +1717,20 @@ body.page-id-11 #page {
   display: flex;
   justify-content: flex-end;
 }
-.max-w-left .gb-grid-column:first-child .gb-container {
-  max-width: 755px;
+@media screen and (min-width: 1024px) {
+  .max-w-left .gb-grid-column:first-child .gb-container {
+    max-width: 755px;
+  }
 }
 
 .max-w-right .gb-grid-column:nth-child(2) {
   display: flex;
   justify-content: flex-start;
 }
-.max-w-right .gb-grid-column:nth-child(2) .gb-container {
-  max-width: 755px;
+@media screen and (min-width: 1024px) {
+  .max-w-right .gb-grid-column:nth-child(2) .gb-container {
+    max-width: 755px;
+  }
 }
 
 .overflow-grid {

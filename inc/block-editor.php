@@ -119,10 +119,15 @@ add_action( 'enqueue_block_editor_assets', 'editor_styles', 99 );
 */
 
 add_filter( 'generateblocks_defaults', function( $defaults ) {
-    $defaults['container']['paddingTop'] = '40';
+    $defaults['container']['paddingTop'] = '80';
     $defaults['container']['paddingRight'] = '20';
-    $defaults['container']['paddingBottom'] = '40';
+    $defaults['container']['paddingBottom'] = '80';
     $defaults['container']['paddingLeft'] = '20';
+
+    $defaults['container']['paddingTopTablet'] = '40';
+    $defaults['container']['paddingRightTablet'] = '20';
+    $defaults['container']['paddingBottomTablet'] = '40';
+    $defaults['container']['paddingLeftTablet'] = '20';
 
     return $defaults;
 } );
